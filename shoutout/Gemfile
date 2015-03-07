@@ -48,6 +48,8 @@ group :development, :test do
 
   gem 'figaro'
 
+  gem 'capybara'
+  
   gem 'guard-rspec', require: false
 
   gem 'rspec-rails', '~> 3.0'
