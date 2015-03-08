@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
 
   def new
+    #test
   end
 
   def show
