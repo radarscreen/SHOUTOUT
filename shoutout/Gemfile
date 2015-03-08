@@ -48,7 +48,10 @@ group :development, :test do
 
   gem 'figaro'
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> gpom_branch
   gem 'capybara'
   
   gem 'guard-rspec', require: false
