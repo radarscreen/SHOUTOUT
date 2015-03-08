@@ -4,7 +4,8 @@ class ProfilesController < ApplicationController
   end
 
   def show
-      #test for pull request
+      #test for pull request #3
+      #test again
   end
 
   def edit
