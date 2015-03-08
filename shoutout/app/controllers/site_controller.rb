@@ -1,5 +1,5 @@
 class SiteController < ApplicationController
-  def index
+  def login
   end
 
   def about
