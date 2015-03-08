@@ -232,6 +232,10 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   byebug
+<<<<<<< HEAD
+=======
+  capybara
+>>>>>>> staging
   coffee-rails (~> 4.1.0)
   figaro
   guard-rspec
