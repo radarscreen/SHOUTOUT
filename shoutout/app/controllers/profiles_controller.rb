@@ -1,10 +1,10 @@
 class ProfilesController < ApplicationController
 
   def new
-    #test
   end
 
   def show
+      #test for pull request
   end
 
   def edit
