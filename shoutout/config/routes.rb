@@ -1,23 +1,32 @@
 Rails.application.routes.draw do
 
-  root 'site#index'
+  root 'site#login'
 
   # login page and about
 
-  get 'site/index'
+  get 'site/login'
 
   get 'site/about'
 
-  # login crud
+  # profile crud
 
-  get 'profiles/index'
+  get '/profile/new', to: 'profile#new'
 
-  get 'profiles/new'
+  get 'profile/:profile_id', to: 'profile#show'
 
-  get 'profiles/edit'
+  get 'profile/:profile_id/edit', to: 'profile#edit'
 
-  get 'profiles/show'
- 
+  post 'profile', to: 'profile#create'
+
+  put 'profile/:profile_id', to: 'profile#update'
+
+  delete 'profile/:id', to: 'profile#destroy'
+
+
+
+
+
+
   # shouts crud
 
   get 'shouts/index', to: 'shouts#index'
