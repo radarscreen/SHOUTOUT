@@ -17,3 +17,27 @@
 
 <h3>Are you new? Let's get you a profile!</h3>
 <%= link_to "New Profile", profile_new_path %>
+
+Signup
+
+<% if @user.errors.any? %>
+  <% @user.errors.full_messages.each do |error| %>
+    <p class = "text-danger"><%= error %></p>
+  <% end %>
+<% end %>
+
+<%= form_for(@user, url: signup_path) do |f|%>
+
+
+  <%= f.label(:username) %>
+  <%= f.text_field(:username, autofocus: true) %>
+
+
+  <%= f.label(:password) %>
+  <%= f.password_field(:password) %>
+
+
+  <%= f.submit("Signup", class: "btn btn-primary") %>
+</p>
+  <%= link_to "Have an account already? Log in here", login_path %>
+<% end %>
