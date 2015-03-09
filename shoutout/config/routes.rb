@@ -4,9 +4,9 @@ Rails.application.routes.draw do
 
   # login page and about
 
-  get 'site/login'
+  get 'site/login', to: 'site#login'
 
-  get 'site/about'
+  get 'site/about', to: 'site#about'
 
   # profile crud
 
