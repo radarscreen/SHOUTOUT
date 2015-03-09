@@ -7,6 +7,7 @@ class ProfilesController < ApplicationController
 
 
   def show
+    @profile = Profile.find_by_id(params[:id])
      #render :profile_shouts_path
   end
 
@@ -30,6 +31,9 @@ class ProfilesController < ApplicationController
   end
 
   def destroy
+    @profile = Profile.find_by_id(params[:id])
+    @profile.delete        
+    redirect_to root_path
   end
 
   private
