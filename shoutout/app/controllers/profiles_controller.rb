@@ -20,8 +20,7 @@ class ProfilesController < ApplicationController
       render :profile
     end ### it says the template is missing profiles/create 
   end ##this could be a good resource: http://stackoverflow.com/questions/22671101/what-does-this-mean-missing-template-ruby-rails-4-devise-2
-##also have an inkling that the user isn't being saved properly, which would cause the 'else' to manifest.
-
+  ##also have an inkling that the user isn't being saved properly, which would cause the 'else' to manifest.
 
   def update
   end
@@ -41,5 +40,4 @@ class ProfilesController < ApplicationController
   def profile_params
     # params.require(:profile).permit(:username, :email, :password, :password_digest)
   end
-
 end
