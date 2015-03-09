@@ -6,3 +6,7 @@
 <li>
   <%= link_to "#{s.title}" %>
 </li>
+<% end %>
+
+<%= button_to "Delete #{@profile.username}", profile_path(@profile), :method => :delete  %>
+
