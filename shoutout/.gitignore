@@ -11,3 +11,10 @@
 /log/*
 !/log/.keep
 /tmp
+
+# project files to ignore
+/db/schema.rb
+/.gitignore
+/Gemfile
+/Gemfile.lock
+/log/development.log
