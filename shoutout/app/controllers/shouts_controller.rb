@@ -1,5 +1,6 @@
 class ShoutsController < ApplicationController
   def index
+  	redirect_to profile_shouts
   end
 
   def new
