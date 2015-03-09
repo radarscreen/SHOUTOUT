@@ -1,2 +1,8 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+<h1>Your Profile</h1>
+
+<%= @profile.username %>
+<%= @profile.email %>
+<% @profile.shouts.each do |s| %>
+<li>
+  <%= link_to "#{s.title}" %>
+</li>
