@@ -6,7 +6,7 @@ class ProfilesController < ApplicationController
 
 
   def show
-     render :profile_shout_path
+     #render :profile_shout_path
   end
 
   def edit
@@ -17,7 +17,7 @@ class ProfilesController < ApplicationController
     if @profile.save
        redirect_to '/profiles/:profile_id/shouts' #:notice => "SHOUT IT OUT!"
     else 
-      render :profile
+      render 'new'
     end ### it says the template is missing profiles/create 
   end ##this could be a good resource: http://stackoverflow.com/questions/22671101/what-does-this-mean-missing-template-ruby-rails-4-devise-2
   ##also have an inkling that the user isn't being saved properly, which would cause the 'else' to manifest.
