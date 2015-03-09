@@ -2,39 +2,68 @@ Rails.application.routes.draw do
 
   root 'site#login'
 
-  # login page and about
+  resources :profiles do
+    resources :shouts
+  end
+
+  # # login page and about
 
   get 'site/login', to: 'site#login'
 
   get 'site/about', to: 'site#about'
 
-  # profile crud
+#   Prefix Verb   URI Pattern                                     Controller#Action
+#               root GET    /                                               site#login
+#     profile_shouts GET    /profiles/:profile_id/shouts(.:format)          shouts#index
+#                    POST   /profiles/:profile_id/shouts(.:format)          shouts#create
+#  new_profile_shout GET    /profiles/:profile_id/shouts/new(.:format)      shouts#new
+# edit_profile_shout GET    /profiles/:profile_id/shouts/:id/edit(.:format) shouts#edit
+#      profile_shout GET    /profiles/:profile_id/shouts/:id(.:format)      shouts#show
+#                    PATCH  /profiles/:profile_id/shouts/:id(.:format)      shouts#update
+#                    PUT    /profiles/:profile_id/shouts/:id(.:format)      shouts#update
+#                    DELETE /profiles/:profile_id/shouts/:id(.:format)      shouts#destroy
+#           profiles GET    /profiles(.:format)                             profiles#index
+#                    POST   /profiles(.:format)                             profiles#create
+#        new_profile GET    /profiles/new(.:format)                         profiles#new
+#       edit_profile GET    /profiles/:id/edit(.:format)                    profiles#edit
+#            profile GET    /profiles/:id(.:format)                         profiles#show
+#                    PATCH  /profiles/:id(.:format)                         profiles#update
+#                    PUT    /profiles/:id(.:format)                         profiles#update
+#                    DELETE /profiles/:id(.:format)                         profiles#destroy
 
-  get '/profile/new', to: 'profile#new'
+  # # login page and about
 
-  get 'profile/:profile_id', to: 'profile#show'
+  # get 'site/login', to: 'site#login'
 
-  get 'profile/:profile_id/edit', to: 'profile#edit'
+  # get 'site/about', to: 'site#about'
 
-  post 'profile', to: 'profile#create'
+  # # profile crud
 
-  put 'profile/:profile_id', to: 'profile#update'
+  # get '/profile/new', to: 'profile#new'
 
-  delete 'profile/:id', to: 'profile#destroy'
+  # get 'profile/:profile_id', to: 'profile#show'
+
+  # get 'profile/:profile_id/edit', to: 'profile#edit'
+
+  # post 'profile', to: 'profile#create'
+
+  # put 'profile/:profile_id', to: 'profile#update'
+
+  # delete 'profile/:id', to: 'profile#destroy'
 
 
 
 
 
 
-  # shouts crud
+  # # shouts crud
 
-  get 'shouts/index', to: 'shouts#index'
+  # get 'shouts/index', to: 'shouts#index'
 
-  get 'shouts/new', to: 'shouts#new'
+  # get 'shouts/new', to: 'shouts#new'
 
-  get 'shouts/edit'
+  # get 'shouts/edit'
 
-  get 'shouts/show'
+  # get 'shouts/show'
 
 end
