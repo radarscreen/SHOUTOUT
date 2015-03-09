@@ -14,8 +14,9 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    Profile.create profile_params
-    redirect_to profile_shouts_path
+    @profile = Profile.create profile_params
+    redirect_to profile_shouts_path @profile
+
     # @profile = Profile.new  profile_params
     # if @profile.save
     #    redirect_to '/profiles/:profile_id/shouts' #:notice => "SHOUT IT OUT!"
@@ -41,7 +42,7 @@ class ProfilesController < ApplicationController
   #   end
 
   def profile_params
-    params.require(:profile).permit(:id, :username, :email, :password, :password_digest)
+    params.require(:profile).permit(:id, :username, :email, :password)
   end
 
   def find_profile
