@@ -21,6 +21,7 @@ class ProfilesController < ApplicationController
       render "new"
     end 
   end
+end
 
   def update
   end
@@ -40,5 +41,4 @@ class ProfilesController < ApplicationController
   def profile_params
     params.require(:profile).permit(:username, :email, :password, :password_digest)
   end
-
-end
+  end
