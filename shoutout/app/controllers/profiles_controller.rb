@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+  # before_action :find_profile, only: 
 
   def new
      @profile = Profile.new
@@ -6,19 +7,21 @@ class ProfilesController < ApplicationController
 
 
   def show
-     #render :profile_shout_path
+     #render :profile_shouts_path
   end
 
   def edit
   end
 
   def create
-    @profile = Profile.new  profile_params
-    if @profile.save
-       redirect_to '/profiles/:profile_id/shouts' #:notice => "SHOUT IT OUT!"
-    else 
-      render 'new'
-    end ### it says the template is missing profiles/create 
+    Profile.create profile_params
+    redirect_to profile_shouts_path
+    # @profile = Profile.new  profile_params
+    # if @profile.save
+    #    redirect_to '/profiles/:profile_id/shouts' #:notice => "SHOUT IT OUT!"
+    # else 
+    #   render 'new'
+    # end ### it says the template is missing profiles/create 
   end ##this could be a good resource: http://stackoverflow.com/questions/22671101/what-does-this-mean-missing-template-ruby-rails-4-devise-2
   ##also have an inkling that the user isn't being saved properly, which would cause the 'else' to manifest.
 
@@ -38,6 +41,10 @@ class ProfilesController < ApplicationController
   #   end
 
   def profile_params
-    params.require(:profile).permit(:username, :email, :password, :password_digest)
+    params.require(:profile).permit(:id, :username, :email, :password, :password_digest)
+  end
+
+  def find_profile
+    @profile = Profile.find params[:id]
   end
 end
