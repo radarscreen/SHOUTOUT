@@ -1,14 +1,25 @@
 <h1>Create New Profile </h1>
 
-<%= form_for @profile do |f| %>
-  <%= f.label :username %>:
-  <%= f.text_field :username %><br />
+<% if @profile.errors.any? %>
+  <% @profile.errors.full_messages.each do |error| %>
+    <p class = "text-danger"><%= error %></p>
+  <% end %>
+<% end %>
 
-  <%= f.label :email %>:
-  <%= f.text_field :email %><br />
+<%= form_for(@profile, url: profile_new_path) do |f|%>
 
-  <%= f.label :password %>:
-  <%= f.text_field :password %><br />
 
-  <%= f.submit "Create Profile"%>
+  <%= f.label :username  %>
+  <%= f.text_field :username, autofocus: true %>
+
+  <%= f.label :email %>
+
+
+  <%= f.label :password %>
+  <%= f.password_field :password  %>
+
+
+  <%= f.submit("Signup", class: "btn btn-primary") %>
+</p>
+  <%= link_to "Have an account already? Log in here", login_path %>
 <% end %>
