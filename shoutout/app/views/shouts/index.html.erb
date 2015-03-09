@@ -1,2 +1,16 @@
-<h1>Shouts#index</h1>
-<p>Find me in app/views/shouts/index.html.erb</p>
+<h1>Here's our shouts!</h1>
+
+<ul>
+<% @shouts.each do |shout| %>
+<li><%= link_to "#{shout.title}", profile_shouts_path%></li>
+<% end %>
+</ul>
+
+<!-- Create link to view individual's profile -->
+
+<!-- to log out, the session id will need to be destroyed -->
+
+<%= link_to "About Us", '/site/about' %>
+
+
+<%= link_to "Create Shout!", new_profile_shout_path %>

@@ -2,7 +2,9 @@ class SiteController < ApplicationController
 
   
   
-  def login
+  def index
+    @user = User.new
+    redirect_to profiles_path
   end
 
   def about

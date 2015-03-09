@@ -12,6 +12,7 @@ feature "Visitor logs into the app" do
   end
 
   scenario "and fails" do
+    
     expect(page).to have_content("Welcome to ShoutOut!")
   
   end
