@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   # for twilio
   post 'twilio/voice', to: 'twilio#voice'
+  post 'notifications/notify', to: 'notifications#notify'
 
 
   #post '/profiles/new', to: 'profiles#create'
