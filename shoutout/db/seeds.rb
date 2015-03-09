@@ -6,12 +6,20 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-pouchy = Profile.create(username: 'pouchy', email: 'pouch@gmail.com', password: '123abc')
+Profile.create(username: 'pouchy', email: 'pouch@gmail.com', password: '123abc')
 
-dining = Category.create(category: 'dining')
+Profile.create(username: 'squirrely', email: 'squirrel@gmail.com', password: '123abc')
 
-activity = Category.create(category: 'activity')
+Profile.create(username: 'gpom', email: 'gpom@gmail.com', password: '123abc')
 
-entertainment = Category.create(category: 'entertainment')
+Profile.create(username: 'horns', email: 'horns@gmail.com', password: '123abc')
 
-yoga = Shout.create(title: 'Yoga in the Park', time: '2015/05/25 12:30:00', location: "St.Mary's Park", description: 'Come one, come all to enjoy some free yoga in the sun!', profile_id: '5', category_id: '2')
+
+
+Category.create(category: 'dining')
+
+Category.create(category: 'activity')
+
+Category.create(category: 'entertainment')
+
+Shout.create(title: 'Yoga in the Park', time: '2015/05/25 12:30:00', location: "St.Mary's Park", description: 'Come one, come all to enjoy some free yoga in the sun!', profile_id: '5', category_id: '2')
