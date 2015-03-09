@@ -1,10 +1,10 @@
 <h1>Welcome to ShoutOut!</h1>
 <h3>Let's get you started</h3>
 
-<%= form_tag(site_login_path) do %>
+<%= form_tag profiles_path  do %>
 
   <%= label_tag(:username)%>
-  <%= text_field_tag(:username, params[:username], autofocus: true)%>
+  <%= text_field_tag(:username, params[:profile], autofocus: true)%>
 
 
   <%= label_tag(:password)%>
@@ -15,5 +15,10 @@
 <% end %>
 
 <h3>Are you new? Let's get you a profile!</h3>
-<%= link_to "New Profile", profile_new_path %>
+<%= link_to "New Profile", new_profile_path %>
+
+<br><br>
+<%= link_to "About Us", '/site/about' %>
+
+
 
