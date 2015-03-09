@@ -1,5 +1,7 @@
 class SiteController < ApplicationController
 
+  
+  
   def login
   end
 
@@ -7,3 +9,4 @@ class SiteController < ApplicationController
   end
 
 end
+
