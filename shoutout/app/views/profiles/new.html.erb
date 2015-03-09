@@ -6,13 +6,14 @@
   <% end %>
 <% end %>
 
-<%= form_for(@profile, url: profile_new_path) do |f|%>
+<%= form_for(@profile, url: profiles_path) do |f|%>
 
 
   <%= f.label :username  %>
   <%= f.text_field :username, autofocus: true %>
 
   <%= f.label :email %>
+  <%= f.text_field :email %>
 
 
   <%= f.label :password %>
@@ -21,5 +22,5 @@
 
   <%= f.submit("Signup", class: "btn btn-primary") %>
 </p>
-  <%= link_to "Have an account already? Log in here", login_path %>
+  <%= link_to "Have an account already? Log in here", site_login_path %>
 <% end %>
