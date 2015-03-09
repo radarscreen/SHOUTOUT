@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get 'site/about', to: 'site#about'
 
+  #post '/profiles/new', to: 'profiles#create'
+
 #   Prefix Verb   URI Pattern                                     Controller#Action
 #               root GET    /                                               site#login
 #     profile_shouts GET    /profiles/:profile_id/shouts(.:format)          shouts#index
