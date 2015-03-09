@@ -1,7 +1,7 @@
 class ShoutsController < ApplicationController
+  
   def index
     @shouts = Shout.all
-    @profile = Profile.find_by_id(:profile_id)
   end
 
   def new
@@ -12,8 +12,12 @@ class ShoutsController < ApplicationController
   end
 
   def show
-    @shout = Shout.all
-    render profile_shout_path
-    @profile = Profile.find_by_id(:id)
+    @shouts = Shout.all
+   @profile = Profile.find params[:profile_id]
+    render profile_shouts_path
   end
+
+  #  def find_profile
+  #   @profile = Profile.find params[:profile_id]
+  # end
 end
