@@ -1,9 +1,13 @@
 <h1>Here's <%= @profile.username %>'s shouts!</h1>
 
 <ul>
-<% @shouts.each do |shout| %>
-<li><%= link_to "#{shout.title}", profile_shout_path(@shout) %></li>
-<% end %>
+  <% @shouts.each do |shout| %>
+  <li>
+    <%= link_to "#{shout.title}", profile_shout_path(@profile.id, shout.id)%> - 
+    <%= link_to "Edit", edit_profile_shout_path(@profile.id, shout.id) %>
+    <%= button_to "Delete #{@profile.username}", profile_path(@profile), :method => :delete  %>
+  </li>
+  <% end %>
 </ul>
 
 <!-- Create link to view individual's profile -->

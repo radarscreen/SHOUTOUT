@@ -15,13 +15,28 @@ class ShoutsController < ApplicationController
     @shout = Shout.new
   end
 
-  def edit
-    # @shout = Shout.find_by_id(params[:id])
+ 
+def edit
+  @profile = Profile.find_by_id(params[:profile_id])
+  @shout = Shout.find_by_id(params[:id])
+end
+
+
+  def update
+    @shout = Shout.find_by_id(params[:id])
+    @shout.update_attributes shout_params
+    @profile = @shout.profile
+    if @shout.save
+      redirect_to shout_path(@shout)
+    else 
+      render :edit
+    end
   end
+
 
   def show
     @shouts = Shout.all
-   @profile = Profile.find params[:profile_id]
+    @profile = Profile.find params[:profile_id]
     render profile_shouts_path
   end
 
