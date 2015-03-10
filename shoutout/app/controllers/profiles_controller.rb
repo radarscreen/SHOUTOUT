@@ -12,6 +12,8 @@ class ProfilesController < ApplicationController
   end
 
   def edit
+    @profile = Profile.find_by_id(params[:id])
+
   end
 
   def create
@@ -28,6 +30,9 @@ class ProfilesController < ApplicationController
   ##also have an inkling that the user isn't being saved properly, which would cause the 'else' to manifest.
 
   def update
+    @profile = Profile.find_by_id(params[:id])
+    @profile.update_attributes profile_params
+    redirect_to profile_path(@profile)
   end
 
   def destroy

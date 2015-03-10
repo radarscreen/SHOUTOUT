@@ -16,6 +16,7 @@ class ShoutsController < ApplicationController
   end
 
   def edit
+    # @shout = Shout.find_by_id(params[:id])
   end
 
   def show

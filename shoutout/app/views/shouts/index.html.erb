@@ -2,7 +2,7 @@
 
 <ul>
 <% @shouts.each do |shout| %>
-<li><%= link_to "#{shout.title}", profile_shouts_path%></li>
+<li><%= link_to "#{shout.title}", profile_shout_path(@shout) %></li>
 <% end %>
 </ul>
 

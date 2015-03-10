@@ -1,2 +1,11 @@
-<h1>Profiles#edit</h1>
-<p>Find me in app/views/profiles/edit.html.erb</p>
+<h1>Edit Your Profile</h1>
+<%= form_for @profile do |p| %>
+<%= p.text_field :username %>
+<%= p.text_field :email %>
+<%= p.text_field :password %>
+<%= p.submit "Update Your Profile" %>
+<% end  %>
+
+<%= button_to "Delete #{@profile.username}", profile_path(@profile), :method => :delete  %>
+
+<%= link_to "Back to Shouts!", profile_shouts_path(@profile) %>
