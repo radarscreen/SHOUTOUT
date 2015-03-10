@@ -19,9 +19,9 @@ class ShoutsController < ApplicationController
   end
 
   def show
-    @shouts = Shout.all
-   @profile = Profile.find params[:profile_id]
-    render profile_shouts_path
+    @profile = Profile.find params[:profile_id]
+    @shout = Shout.find_by_id(params[:id])
+    @category = Category.all
   end
 
   private 
