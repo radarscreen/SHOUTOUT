@@ -18,9 +18,16 @@ post 'logout' => 'profile_sessions#destroy', :as => :logout
   # post 'twilio/voice', to: 'twilio#voice'
   post 'notifications/notify', to: 'notifications#notify'
 
-
 # Prefix Verb   URI Pattern                                     Controller#Action
 #                 root GET    /                                               site#login
+#     profile_sessions GET    /profile_sessions(.:format)                     profile_sessions#index
+#                      POST   /profile_sessions(.:format)                     profile_sessions#create
+#  new_profile_session GET    /profile_sessions/new(.:format)                 profile_sessions#new
+# edit_profile_session GET    /profile_sessions/:id/edit(.:format)            profile_sessions#edit
+#      profile_session GET    /profile_sessions/:id(.:format)                 profile_sessions#show
+#                      PATCH  /profile_sessions/:id(.:format)                 profile_sessions#update
+#                      PUT    /profile_sessions/:id(.:format)                 profile_sessions#update
+#                      DELETE /profile_sessions/:id(.:format)                 profile_sessions#destroy
 #       profile_shouts GET    /profiles/:profile_id/shouts(.:format)          shouts#index
 #                      POST   /profiles/:profile_id/shouts(.:format)          shouts#create
 #    new_profile_shout GET    /profiles/:profile_id/shouts/new(.:format)      shouts#new
@@ -37,8 +44,10 @@ post 'logout' => 'profile_sessions#destroy', :as => :logout
 #                      PATCH  /profiles/:id(.:format)                         profiles#update
 #                      PUT    /profiles/:id(.:format)                         profiles#update
 #                      DELETE /profiles/:id(.:format)                         profiles#destroy
+#                login GET    /login(.:format)                                profile_sessions#new
+#               logout POST   /logout(.:format)                               profile_sessions#destroy
 #           site_login GET    /site/login(.:format)                           site#login
 #           site_about GET    /site/about(.:format)                           site#about
-# notifications_notify POST   /notifications/notify(.:format)                 notifications#notif                        profiles#destroy
+# notifications_notify POST   /notifications/notify(.:format)                 notifications#notify                notifications#notif                        profiles#destroy
 
 end
