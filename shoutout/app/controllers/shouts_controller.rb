@@ -16,10 +16,10 @@ class ShoutsController < ApplicationController
   end
 
  
-def edit
-  @profile = Profile.find_by_id(params[:profile_id])
-  @shout = Shout.find_by_id(params[:id])
-end
+  def edit
+    @profile = Profile.find_by_id(params[:profile_id])
+    @shout = Shout.find_by_id(params[:id])
+  end
 
 
   def update

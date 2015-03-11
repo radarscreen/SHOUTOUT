@@ -36,8 +36,8 @@ class ProfilesController < ApplicationController
   end
 
   def destroy
-    @profile = Profile.find_by_id(params[:id])
-    @profile.delete        
+    profile = Profile.find_by_id(params[:id])
+    profile.delete        
     redirect_to root_path
   end
 
