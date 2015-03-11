@@ -1,6 +1,7 @@
 <h1><%= @shout.title %></h1>
 <h3>Time: <%= @shout.time %></h3>
 <h3>Location: <%= @shout.location %></h3>
+<%= link_to "Edit #{@shout.title}", edit_profile_shout_path %>
 <iframe
   width="400"
   height="350"
