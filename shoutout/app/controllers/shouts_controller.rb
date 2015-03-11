@@ -35,9 +35,11 @@ class ShoutsController < ApplicationController
 
 
   def show
-    @shouts = Shout.all
+
     @profile = Profile.find params[:profile_id]
-    render profile_shouts_path
+    @shout = Shout.find_by_id(params[:id])
+    @category = Category.all
+
   end
 
   def destroy

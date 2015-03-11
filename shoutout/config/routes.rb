@@ -14,6 +14,11 @@ post 'logout' => 'profile_sessions#destroy', :as => :logout
 
   get 'site/about', to: 'site#about'
 
+  # for twilio
+  # post 'twilio/voice', to: 'twilio#voice'
+  post 'notifications/notify', to: 'notifications#notify'
+
+
   #post '/profiles/new', to: 'profiles#create'
 
 #   Prefix Verb   URI Pattern                                     Controller#Action
