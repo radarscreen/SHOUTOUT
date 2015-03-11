@@ -40,6 +40,12 @@ class ShoutsController < ApplicationController
     render profile_shouts_path
   end
 
+  def destroy
+    shout = Shout.find params[:id]
+    shout.destroy
+    redirect_to profile_shouts_path(@profile)
+  end
+
   private 
   def shout_params
     params.require(:shout).permit(:id, :profile_id, :category_id, :title, :time, :description, :location)

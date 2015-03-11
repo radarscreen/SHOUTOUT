@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
 
-  root 'site#login'
-
+  root :to => 'site#login'
+  resources :profile_sessions
   resources :profiles do
     resources :shouts
   end
 
+get 'login' => 'profile_sessions#new', :as => :login
+post 'logout' => 'profile_sessions#destroy', :as => :logout
   # # login page and about
 
   get 'site/login', to: 'site#login'

@@ -42,16 +42,8 @@ class ProfilesController < ApplicationController
   end
 
   private
-  # def attempt_login 
-  #   if params[:username].present? && params[:password].present?
-  #     found_profile = Profile.where(username: params[:profile]).first
-  #     if found_profile
-  #       authorized_profile = found_profile.authenticate(params[:password])
-  #     end
-  #   end
-
   def profile_params
-    params.require(:profile).permit(:id, :username, :email, :password)
+    params.require(:profile).permit(:username, :email,  :password)
   end
 
   def find_profile
