@@ -1,7 +1,11 @@
-
 body {
   background-color: #EFEDDF;
 }
+
+#header {
+  font-size: 40px, center;
+}
+
 
 .box {
   background-color: #037F8C;
