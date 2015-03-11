@@ -12,6 +12,11 @@ Rails.application.routes.draw do
 
   get 'site/about', to: 'site#about'
 
+  # for twilio
+  # post 'twilio/voice', to: 'twilio#voice'
+  post 'notifications/notify', to: 'notifications#notify'
+
+
   #post '/profiles/new', to: 'profiles#create'
 
 #   Prefix Verb   URI Pattern                                     Controller#Action
