@@ -1,8 +1,12 @@
 
+<<<<<<< HEAD
 <div class="col-xs-4"
   <h1>ShoutOut!</h1>
 </div>
-<div class= "box"><%= form_tag profiles_path  do %>
+<div class= "box">
+
+<%= form_tag login_path  do %>
+
 
   <div><%= label_tag(:username)%></div>
   <div><%= text_field_tag(:username, params[:profile], autofocus: true)%></div>
