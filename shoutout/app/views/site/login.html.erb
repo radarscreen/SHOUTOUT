@@ -1,20 +1,20 @@
-<div class="bar"
-  <h1>Welcome to ShoutOut!</h1>
-  <h3>Let's get you started</h3>
+
+<div class="col-xs-4"
+  <h1>ShoutOut!</h1>
 </div>
-<%= form_tag profiles_path  do %>
+<div class= "box"><%= form_tag profiles_path  do %>
 
-  <%= label_tag(:username)%>
-  <%= text_field_tag(:username, params[:profile], autofocus: true)%>
+  <div><%= label_tag(:username)%></div>
+  <div><%= text_field_tag(:username, params[:profile], autofocus: true)%></div>
 
 
-  <%= label_tag(:password)%>
-  <%= password_field_tag(:password)%>
+  <div><%= label_tag(:password)%></div>
+  <div><%= password_field_tag(:password)%></div>
 
-  <%= submit_tag("Log in", class: "btn btn-primary") %>
+  <div><%= submit_tag("Log in", class: "btn btn-primary") %></div>
 
 <% end %>
-
+</div>
 <h3>Are you new? Let's get you a profile!</h3>
 <%= link_to "New Profile", new_profile_path %>
 
