@@ -30,17 +30,15 @@ class ShoutsController < ApplicationController
 
 
   def show
-
     @profile = Profile.find params[:profile_id]
     @shout = Shout.find_by_id(params[:id])
     @category = Category.all
-
   end
 
   def destroy
     shout = Shout.find params[:id]
     shout.destroy
-    redirect_to profile_shouts_path(@profile)
+    redirect_to profile_shouts_path(shout.profile)
   end
 
   private 
