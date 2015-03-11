@@ -4,6 +4,7 @@ class NotificationsController < ApplicationController
 
   def notify
 
+
     body_text = 'this is a test'
     to_number = '+17076881895'
 
