@@ -25,12 +25,7 @@ class ShoutsController < ApplicationController
   def update
     @shout = Shout.find_by_id(params[:id])
     @shout.update_attributes shout_params
-    @profile = @shout.profile
-    if @shout.save
-      redirect_to shout_path(@shout)
-    else 
-      render :edit
-    end
+    redirect_to profile_shout_path
   end
 
 
@@ -61,3 +56,6 @@ class ShoutsController < ApplicationController
   #   @profile = Profile.find params[:profile_id]
   # end
 end
+
+ 
+
