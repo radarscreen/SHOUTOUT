@@ -1,8 +1,18 @@
-
 body {
   background-color: #EFEDDF;
+  padding: 0px;
 }
 
+
+#header {
+  background-color: #046380;
+  border-top-width: auto;
+  font-size: 40px, center;
+
+
+}
+
+
 .box {
-  background-color: #037F8C;
+  background-color: #046380;
 }
