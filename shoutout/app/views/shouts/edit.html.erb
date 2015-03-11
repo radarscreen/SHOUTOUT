@@ -1,2 +1,13 @@
-<h1>Shouts#edit</h1>
-<p>Find me in app/views/shouts/edit.html.erb</p>
+<h1>Edit Your Shout</h1>
+<%= form_for @profile do |s| %>
+<%= s.text_field :title %>
+<%= s.text_field :time %>
+<%= s.text_field :location %>
+<%= s.text_area :description %>
+<%= s.submit "Update Your Shout" %>
+<% end  %>
+
+<%= button_to "X", profile_shout_path(@profile), :method => :delete %>
+
+<%= link_to "Back to Shouts!", profile_shouts_path(@profile) %>
+
