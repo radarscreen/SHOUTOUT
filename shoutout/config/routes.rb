@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :shouts
   end
 
-get 'login' => 'profile_sessions#new', :as => :login
+post 'login' => 'profile_sessions#attempt_login', :as => :login
 post 'logout' => 'profile_sessions#destroy', :as => :logout
   # # login page and about
 
