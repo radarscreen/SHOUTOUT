@@ -67,7 +67,7 @@ class ShoutsController < ApplicationController
     client = Twilio::REST::Client.new twilio_account_sid, twilio_auth_token
     message = client.account.messages.create(:body => body_text,
         :to => to_number,
-        :from => from_nunber)
+        :from => from_number)
     puts message.to
   end
 
