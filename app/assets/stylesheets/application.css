@@ -1,13 +1,20 @@
 body {
-  background-color: #EFEDDF;
+  margin: 0px;
+  background-color: #EDEFE1;
   padding: 0px;
 }
 
 
 #header {
+  margin: 0px, auto;
   background-color: #046380;
-  border-top-width: auto;
   font-size: 40px, center;
+  position: relative;
+  border-color: #82006E;
+  border-bottom: solid;
+  border-width: 2px;
+  text-align: center;
+  
 
 
 }
@@ -15,4 +22,7 @@ body {
 
 .box {
   background-color: #046380;
+  border-color: #82006E;
+  border-style: solid;
+  border-width: 1px;
 }
