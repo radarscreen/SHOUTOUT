@@ -10,14 +10,14 @@
 
 
   <%= f.label :username  %>
-  <%= f.text_field :username, autofocus: true %>
+  <%= f.text_field :username, placeholder: "Name...", autofocus: true %>
 
   <%= f.label :email %>
-  <%= f.text_field :email %>
+  <%= f.text_field :email, placeholder: "Email..." %>
 
 
   <%= f.label :password %>
-  <%= f.password_field :password  %>
+  <%= f.password_field :password, placeholder: "Password..."  %>
 
 
   <%= f.submit("Signup", class: "btn btn-primary") %>
