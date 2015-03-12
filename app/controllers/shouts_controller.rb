@@ -21,6 +21,7 @@ class ShoutsController < ApplicationController
   def edit
     @profile = Profile.find_by_id(params[:profile_id])
     @shout = Shout.find_by_id(params[:id])
+    @categories = Category.all
   end
 
 
