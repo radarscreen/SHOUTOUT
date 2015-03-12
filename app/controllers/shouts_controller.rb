@@ -12,7 +12,7 @@ class ShoutsController < ApplicationController
     @shout = Shout.new shout_params
     @shout.profile = @profile
     @shout.save
-    #notify
+    notify
     redirect_to profile_shouts_path @profile
   end
 
