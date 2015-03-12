@@ -81,7 +81,5 @@ test:
 production:
   <<: *default
   # database: shoutout_production
-  # database: HEROKU_POSTGRESQL_AQUA
-  database: postgres://mneoowymwqqdiu:9y7C0yxV4NkkkUyMI1bjPuGyir@ec2-54-197-250-52.compute-1.amazonaws.com:5432/df49h1mfd592v7
-  username: shoutout
-  password: <%= ENV['SHOUTOUT_DATABASE_PASSWORD'] %>
+  # username: shoutout
+  # password: <%= ENV['SHOUTOUT_DATABASE_PASSWORD'] %>
