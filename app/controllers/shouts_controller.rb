@@ -14,6 +14,7 @@ class ShoutsController < ApplicationController
   def new
     @shout = Shout.new
     @categories = Category.all
+    @profile = Profile.find_by_id(params[:profile_id])
   end
 
  
