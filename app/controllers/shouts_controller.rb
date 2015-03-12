@@ -69,7 +69,7 @@ class ShoutsController < ApplicationController
     # all this needs to be read from the DB and put in a loop
     twilio_account_sid = "ACcd6e84ce13b4e855c70761899db8f75e"
     twilio_auth_token = "9b9ae629188f4baf43df84ebeb700c25"
-    body_text = @shout.title
+    body_text = 'NEW Shout! ' + 'from ' + @profile.username + ' '  + @shout.title
 
     profiles = Profile.all
 
