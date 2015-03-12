@@ -13,6 +13,8 @@ class ShoutsController < ApplicationController
 
   def new
     @shout = Shout.new
+    @categories = Category.all
+    @profile = Profile.find_by_id(params[:profile_id])
   end
 
  
@@ -36,9 +38,12 @@ class ShoutsController < ApplicationController
   end
 
   def destroy
+    #profile = Profile.find params[:profile_id]
     shout = Shout.find params[:id]
     shout.destroy
     redirect_to profile_shouts_path(shout.profile)
+    ##this redirect with the shout.profile used to work...not sure why it isn't anymore. tim explaine that a shout had a profile and that's why we have referenced it this way.
+
   end
 
   private 
