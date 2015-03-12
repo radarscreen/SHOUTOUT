@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
 
 post 'login' => 'profile_sessions#attempt_login', :as => :login
-post 'logout' => 'profile_sessions#destroy', :as => :logout
+post 'logout' => 'profile_sessions#logout', :as => :logout
   # # login page and about
 
   get 'site/login', to: 'site#login'

@@ -31,7 +31,7 @@ class ProfileSessionsController < ApplicationController
 
   def logout
     session[:profile_id] = nil
-    render :logout
+    redirect_to root_path
   end
  
 
