@@ -2,24 +2,23 @@ $(document).ready(function() {
 
 
   function initialize () {
-    setInterval(function () {shoutLoop();}, 2500); 
+    setInterval(function () {shoutLoop();}, 5000); 
   }
 
   function shoutLoop () {
-    $.getJSON('http://api.open-notify.org/iss-now.json?callback=?', function(data) {
 
-      var newID = {
-        // id: whatever the db retutns
-      };
-
-      if (newID > oldID)  {
-
-        // this is where we extract the data
-
-        oldID = newID;
+    $.ajax({
+      url: "https://dataclips.heroku.com/ykzjhdqdkuzhwfrlgxmilbijctxk-profiles",
+      dataType : "json",
+      success: function (data){
+        data.Search.forEach(function(value) {
+          console.log(value);
+          $("body").append("<h4>" + value.username + "</h4>");
+        });
       }
-
     });
+
+
   }
 
 
