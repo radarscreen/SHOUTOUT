@@ -2,12 +2,13 @@
 <br><br><br>
 <div class= "box">
 
+
   <%= form_tag login_path  do %>
   <div class ="row-label">
     <div class = "col-xs-3 col-xs-offset-3"><%= label_tag(:username)%></div>
   </div>
   <div class="row-text">
-    <div class="col-xs-3 col-xs-offset-3"><%= text_field_tag(:username, params[:profile], autofocus: true)%></div>
+    <div class="col-xs-3 col-xs-offset-3"><%= text_field_tag(:username, params[:profile], placeholder: "Your Username" autofocus: true)%></div>
   </div>
   <div class ="row-label">
     <div class="col-xs-3 col-xs-offset-3"><%= label_tag(:password)%></div>
@@ -21,6 +22,7 @@
   </div>
 
   <% end %>
+
 </div>
 
   <div class="row-footer">
