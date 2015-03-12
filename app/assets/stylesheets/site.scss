@@ -1,3 +1,23 @@
+div.text-center_alert_alert-warning {
+  font-color: black;
+  background-color: #FFE5A4;
+  border-style: solid;
+  border-color: #F27D24;
+  text-align: center;
+  padding: 20px;
+  width: auto;
+}
+div.text-center_alert_alert-danger {
+  font-color: black;
+  background-color: #FFE5A4;
+  border-style: solid;
+  border-color: #F27D24;
+  text-align: center;
+  padding: 20px;
+  width: auto;
+}
+
+
 .box {
   background-color: #12618A;
   margin-left: auto;
@@ -78,4 +98,19 @@
   font-size: 20pt;
   color: #F27D24;
   float: left;
+}
+h1 {
+  width: auto;
+  font-family: Helvetica;
+  text-align: center;
+  font-size: 60pt;
+  text-shadow: 2px 3px 0px #F27D24;
+}
+.sun_coder_img {
+  position: center;
+  border-style: solid;
+  border-color: #F27D24;
+  border-radius: 2px;
+  
+
 }
