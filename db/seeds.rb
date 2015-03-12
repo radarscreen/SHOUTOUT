@@ -12,7 +12,7 @@ Profile.create(username: 'squirrely', email: 'squirrel@gmail.com', password: '12
 
 Profile.create(username: 'gpom', email: 'gpom@gmail.com', password: '123abc')
 
-Profile.create(username: 'horns', email: 'horns@gmail.com', password: '123abc')
+Profile.create(username: 'joel', email: 'joel@gmail.com', password: '123abc')
 
 
 
