@@ -23,8 +23,8 @@
   <%= f.text_field :phone_number %>
 
   
-  <%= check_box_tag(:notification) %>
-  <%= label_tag(:notification, "Notify me about new shouts!") %>
+  <%= f.label(:notification, "Notify me about new shouts!") %>
+  <%= f.check_box(:notification) %>
 
   <%= f.submit("Signup", class: "btn btn-primary") %>
 </p>

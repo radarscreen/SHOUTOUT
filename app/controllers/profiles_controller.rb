@@ -16,6 +16,7 @@ class ProfilesController < ApplicationController
 
   def create
     @profile = Profile.create profile_params
+    puts profile_params
     redirect_to profile_shouts_path @profile
 
     # @profile = Profile.new  profile_params

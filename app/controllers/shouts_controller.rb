@@ -64,10 +64,9 @@ class ShoutsController < ApplicationController
     profiles = Profile.all
 
     profiles.each do |profile|
-      if profile.nofication
-
+      if profile.notification
+        # need to wrap this in error handling
         to_number = '+1' + profile.phone_number    
-        #to_number = '+17076881895'
         from_number = '+17078818036'
         client = Twilio::REST::Client.new twilio_account_sid, twilio_auth_token
         message = client.account.messages.create(:body => body_text,
@@ -84,7 +83,7 @@ class ShoutsController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit(:id, :username, :email, :password)
+    params.require(:profile).permit(:id, :username, :email, :password, :phone_number, :notification)
   end
 
   #  def find_profile
