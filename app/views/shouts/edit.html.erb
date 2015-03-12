@@ -1,5 +1,8 @@
 <h1>Edit Your Shout</h1>
 <%= form_for [@profile, @shout] do |s| %>
+
+<%= s.collection_select(:category_id, @categories, :id, :category, {:prompt => false}) %> 
+
 <%= s.text_field :title %>
 <%= s.text_field :time %>
 <%= s.text_field :location %>
