@@ -9,6 +9,7 @@ class ShoutsController < ApplicationController
   def create
     @profile = Profile.find_by_id(params[:profile_id])
     @shout = Shout.create shout_params
+    notify
     redirect_to profile_shouts_path @profile
   end
 
@@ -16,7 +17,6 @@ class ShoutsController < ApplicationController
     @shout = Shout.new
     @categories = Category.all
     @profile = Profile.find_by_id(params[:profile_id])
-    notify
   end
 
  
@@ -57,17 +57,24 @@ class ShoutsController < ApplicationController
     # all this needs to be read from the DB and put in a loop
     twilio_account_sid = "ACcd6e84ce13b4e855c70761899db8f75e"
     twilio_auth_token = "9b9ae629188f4baf43df84ebeb700c25"
+    body_text = @shout.title
 
-    body_text = @profile.username
+    profiles = Profile.all
 
-    # body_text = 'Shout created'
-    to_number = '+17076881895'
-    from_number = '+17078818036'
-    client = Twilio::REST::Client.new twilio_account_sid, twilio_auth_token
-    message = client.account.messages.create(:body => body_text,
-        :to => to_number,
-        :from => from_number)
-    puts message.to
+    profiles.each do |profile|
+      if profile.nofication
+
+        to_number = '+1' + profile.phone_number    
+        #to_number = '+17076881895'
+        from_number = '+17078818036'
+        client = Twilio::REST::Client.new twilio_account_sid, twilio_auth_token
+        message = client.account.messages.create(:body => body_text,
+            :to => to_number,
+            :from => from_number)
+        puts message.to
+
+      end
+    end
   end
 
   def shout_params
@@ -83,5 +90,4 @@ class ShoutsController < ApplicationController
   # end
 end
 
- 
 
