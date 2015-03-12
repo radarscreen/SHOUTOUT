@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150312163723) do
+ActiveRecord::Schema.define(version: 20150312191811) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 20150312163723) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.integer  "phone_number"
-    t.boolean  "nofication"
+    t.string   "phone_number"
+    t.boolean  "notification"
   end
 
   create_table "shouts", force: :cascade do |t|
