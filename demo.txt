@@ -1,0 +1,10 @@
+Things that worked
+  branching
+  Google Maps
+  Twilio
+
+
+Things we struggled with
+  branching
+  authentication
+  communication
