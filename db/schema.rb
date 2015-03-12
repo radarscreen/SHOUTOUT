@@ -46,4 +46,14 @@ ActiveRecord::Schema.define(version: 20150312163723) do
     t.string   "state"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string   "email",            null: false
+    t.string   "crypted_password"
+    t.string   "salt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+
 end

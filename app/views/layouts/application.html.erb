@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Shoutout</title>
+  <title>ShoutOut!</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+ 
+ <!-- Optional theme -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+ <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.2/flatly/bootstrap.min.css" rel="stylesheet">
+ <!-- Latest compiled and minified JavaScript -->
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
 </head>
 <body>
+<div class = "container-fluid">
+
+<div class = "header"><h1>ShoutOut!</h1></div>
 
 
 
 <%= yield %>
 
 </body>
+<footer>
+  <div class="footer"></div>
+</footer>
 </html>
