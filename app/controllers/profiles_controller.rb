@@ -16,6 +16,7 @@ class ProfilesController < ApplicationController
 
   def create
     @profile = Profile.create profile_params
+    puts profile_params
     redirect_to profile_shouts_path @profile
 
     # @profile = Profile.new  profile_params
@@ -46,7 +47,7 @@ class ProfilesController < ApplicationController
   #   end
 
   def profile_params
-    params.require(:profile).permit(:id, :username, :email, :password)
+    params.require(:profile).permit(:id, :username, :email, :password, :phone_number, :notification)
   end
 
   def find_profile
