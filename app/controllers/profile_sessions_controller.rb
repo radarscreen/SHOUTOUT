@@ -21,10 +21,10 @@ class ProfileSessionsController < ApplicationController
           if authorized_profile
             redirect_to profile_shouts_path(authorized_profile), notice: "You've succesfully logged in!"
             else
-            redirect_to login_path, notice: "Your password is invalid"
+            redirect_to root_path, notice: "Your username or password is invalid"
           end
           else
-          redirect_to login_path, notice: "Your username is invalid"
+          redirect_to root_path, notice: "Your username or password is invalid"
       end
     end
   end
