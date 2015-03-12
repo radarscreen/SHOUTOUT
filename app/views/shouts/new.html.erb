@@ -6,14 +6,14 @@
   <%= f.collection_select(:title, @categories, :id, :category, {:prompt => false}) %> 
 
   <%= f.label :title  %>
-  <%= f.text_field :title, autofocus: true %>
+  <%= f.text_field :title, placeholder: "Title...", autofocus: true %>
 
   <%= f.label :time %>
-  <%= f.text_field :time %>
+  <%= f.text_field :time, placeholder: "When..."  %>
 
 
   <%= f.label :location %>
-  <%= f.text_field :location  %>
+  <%= f.text_field :location, placeholder: "Location..." %>
 
   <%= f.label :description %>
   <%= f.text_area :description  %>
