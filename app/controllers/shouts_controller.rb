@@ -3,6 +3,7 @@ class ShoutsController < ApplicationController
   def index
     @shouts = Shout.all
     @profile = Profile.find params[:profile_id]
+    @categories = Category.all
   end
 
   def create
