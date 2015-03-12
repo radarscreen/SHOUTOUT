@@ -8,7 +8,9 @@ class ShoutsController < ApplicationController
 
   def create
     @profile = Profile.find_by_id(params[:profile_id])
-    @shout = Shout.create shout_params
+    @shout = Shout.new shout_params
+    @shout.profile = @profile
+    @shout.save
     redirect_to profile_shouts_path @profile
   end
 

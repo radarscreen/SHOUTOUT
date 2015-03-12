@@ -19,6 +19,12 @@
   <%= f.label :password %>
   <%= f.password_field :password, placeholder: "Password..."  %>
 
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone_number %>
+
+  
+  <%= check_box_tag(:notify_me) %>
+  <%= label_tag(:notify_me, "Notify me about new shouts!") %>
 
   <%= f.submit("Signup", class: "btn btn-primary") %>
 </p>
