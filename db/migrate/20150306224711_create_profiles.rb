@@ -5,6 +5,7 @@ class CreateProfiles < ActiveRecord::Migration
       t.string :email
       t.string :password
       t.string :password_digest
+      t.integer :phone
 
       t.timestamps null: false
     end

@@ -10,15 +10,21 @@
 
 
   <%= f.label :username  %>
-  <%= f.text_field :username, autofocus: true %>
+  <%= f.text_field :username, placeholder: "Name...", autofocus: true %>
 
   <%= f.label :email %>
-  <%= f.text_field :email %>
+  <%= f.text_field :email, placeholder: "Email..." %>
 
 
   <%= f.label :password %>
-  <%= f.password_field :password  %>
+  <%= f.password_field :password, placeholder: "Password..."  %>
 
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone_number %>
+
+  
+  <%= f.label(:notification, "Notify me about new shouts!") %>
+  <%= f.check_box(:notification) %>
 
   <%= f.submit("Signup", class: "btn btn-primary") %>
 </p>
