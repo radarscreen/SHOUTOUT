@@ -1,4 +1,11 @@
 <h1>Shout It!</h1>
+<% if @shout.errors.any? %>
+  <% @shout.errors.full_messages.each do |error|  %>
+    <p><font color="red">
+    <%= error %>
+    </font></p> 
+  <% end %>
+<% end %>
 
 <%= form_for([@profile, @shout], url: profile_shouts_path) do |f|%>
 	
