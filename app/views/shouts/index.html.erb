@@ -17,3 +17,5 @@
 <%= link_to "View #{@profile.username}'s Profile", profile_path(@profile.id) %>
 
 <%= link_to "Create Shout!", new_profile_shout_path %>
+
+<%= link_to "Logout", logout_path, method: :post %> 

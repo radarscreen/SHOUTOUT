@@ -20,11 +20,13 @@ class ProfileSessionsController < ApplicationController
         authorized_profile = found_profile.authenticate(params[:password])
           if authorized_profile
             redirect_to profile_shouts_path(authorized_profile), notice: "You've succesfully logged in!"
-            else
-            redirect_to login_path, notice: "Your password is invalid"
-          end
           else
-          redirect_to login_path, notice: "Your username is invalid"
+            flash[:notice] = "Your username or password is invalid"
+            redirect_to root_path 
+          end
+      else
+        flash[:notice] = "Your username or password is invalid"
+        redirect_to root_path
       end
     end
   end
