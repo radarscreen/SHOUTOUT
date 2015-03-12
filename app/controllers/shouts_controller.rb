@@ -63,7 +63,7 @@ class ShoutsController < ApplicationController
 
     # body_text = 'Shout created'
     to_number = '+17076881895'
-    from_nunber = '+17078818036'
+    from_number = '+17078818036'
     client = Twilio::REST::Client.new twilio_account_sid, twilio_auth_token
     message = client.account.messages.create(:body => body_text,
         :to => to_number,
