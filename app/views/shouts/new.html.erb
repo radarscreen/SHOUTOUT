@@ -1,5 +1,13 @@
 <h1>Shout It!</h1>
-
+<div class="alert">
+<% flash.each do |key, value| %>
+  <% if key == "error" %>
+    <%= content_tag :div, value, class: "text-center_alert_alert-warning" %>
+  <% elsif key == "alert" %>
+    <%= content_tag :div, value, class: "text-center_alert_alert-danger" %>
+  <% end %>
+<% end %>
+</div>
 <%= form_for([@profile, @shout], url: profile_shouts_path) do |f|%>
 	
 	<%= f.label :Category %><br />

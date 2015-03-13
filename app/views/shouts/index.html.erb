@@ -1,5 +1,10 @@
 <h1>Upcoming Shouts!</h1>
 
+<%= form_tag profile_shouts_path, method: :get do %>
+<%= select_tag :category_id, options_from_collection_for_select(@categories, :id, :category, @category_id) %>
+<%= submit_tag "Filter by Category" %>
+<% end %>
+
 
 
 <ul>
@@ -8,9 +13,7 @@
 <% end %>
 </ul>
 
-<!-- Create link to view individual's profile -->
 
-<!-- to log out, the session id will need to be destroyed -->
 
 <%= link_to "About Us", '/site/about' %>
 

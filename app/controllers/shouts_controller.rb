@@ -1,7 +1,12 @@
 class ShoutsController < ApplicationController
   #before_action :find_profile, only: [:index, :edit, :show, :destroy] 
   def index
-    @shouts = Shout.all
+    @category_id = params[:category_id]
+    if @category_id
+      @shouts = Shout.where(category_id: @category_id)
+    else
+      @shouts = Shout.order('created_at DESC')
+    end
     @profile = Profile.find params[:profile_id]
     @categories = Category.all
   end
@@ -10,9 +15,13 @@ class ShoutsController < ApplicationController
     @profile = Profile.find_by_id(params[:profile_id])
     @shout = Shout.new shout_params
     @shout.profile = @profile
-    @shout.save
-    notify
-    redirect_to profile_shouts_path @profile
+    if @shout.save
+      notify
+      redirect_to profile_shouts_path @profile
+    else
+      flash[:error] = "Shout information insufficient. Complete all fields and submit again"
+      redirect_to new_profile_shout_path 
+    end
   end
 
   def new
@@ -31,8 +40,13 @@ class ShoutsController < ApplicationController
 
   def update
     @shout = Shout.find_by_id(params[:id])
-    @shout.update_attributes shout_params
-    redirect_to profile_shout_path
+    if @shout.update_attributes shout_params
+      notify
+      redirect_to profile_shout_path
+    else
+      redirect_to edit_profile_shout_path
+      flash[:error] = "Shout information insufficient. Complete all fields and submit again"
+    end
   end
 
 
@@ -59,7 +73,7 @@ class ShoutsController < ApplicationController
     # all this needs to be read from the DB and put in a loop
     twilio_account_sid = "ACcd6e84ce13b4e855c70761899db8f75e"
     twilio_auth_token = "9b9ae629188f4baf43df84ebeb700c25"
-    body_text = @shout.title
+    body_text = 'NEW Shout! ' + 'from ' + @profile.username + ' '  + @shout.title
 
     profiles = Profile.all
 
