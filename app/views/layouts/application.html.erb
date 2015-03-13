@@ -17,11 +17,23 @@
 
 </head>
 <body>
+
 <header>
   <div class = "header">
     <h1 class="shoutout">ShoutOut!</h1>
   </div>
 </header>
+
+
+<% flash.each do |key, value| %>
+  <% if key == "error" %>
+    <%= content_tag :div, value, class: "text-center alert alert-warning" %>
+  <% elsif key == "alert" %>
+    <%= content_tag :div, value, class: "text-center alert alert-danger" %>
+  <% end %>
+<% end %>
+
+
 <%= yield %>
 
 </body>
