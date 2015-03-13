@@ -13,12 +13,15 @@ $(document).ready(function() {
       dataType : "json",
       success: function (shouts){
         shouts.forEach(function(value) {
+
           if (value.id > currentShoutID) {
             currentShoutID = value.id;
             console.log("currentShoutID = " + currentShoutID);
             $(".shouts").prepend("<li>" + value.title + "</li>");
 
+            $(".shouts").prepend("<li><a href=" + value.title, "/profiles/"+profileId+"/shouts/"+value.id+"</li>");
           }
+
 
         });
       },
