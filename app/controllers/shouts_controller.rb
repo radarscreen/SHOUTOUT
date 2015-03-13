@@ -40,13 +40,14 @@ class ShoutsController < ApplicationController
 
   def update
     @shout = Shout.find_by_id(params[:id])
-    @profile = Profile.find_by_id(params[:profile_id])
+    @profile = Profile.find_by_id(params[:profile_id]) 
+    @shout.profile_id = params[:profile_id]
     if @shout.update_attributes shout_params
       notify
       redirect_to profile_shout_path
     else
-      redirect_to edit_profile_shout_path
       flash[:error] = "Shout information insufficient. Complete all fields and submit again"
+      redirect_to edit_profile_shout_path
     end
   end
 
