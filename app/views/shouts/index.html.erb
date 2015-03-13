@@ -1,24 +1,19 @@
-<h1>Upcoming Shouts!</h1>
-
+<h1 class="shout-index">Upcoming Shouts!</h1>
 <%= form_tag profile_shouts_path, method: :get do %>
-<%= select_tag :category_id, options_from_collection_for_select(@categories, :id, :category, @category_id) %>
-<%= submit_tag "Filter by Category" %>
+<span id="dropdown-shout-index"><%= select_tag :category_id, options_from_collection_for_select(@categories, :id, :category, @category_id) %></span>
+<span id="submit-shout-index"><%= submit_tag "Filter by Category" %></span>
 <% end %>
 
-
-
-<ul class="shouts">
 <% @shouts.each do |shout| %>
-<li><%= link_to "#{shout.title}", "/profiles/#{@profile.id}/shouts/#{shout.id}"%></li>
+<div class="shouts-index">
+  <p><%= link_to "#{shout.title}", "/profiles/#{@profile.id}/shouts/#{shout.id}"%></p>
+</div>
 <% end %>
-</ul>
 
 
-
-<%= link_to "About Us", '/site/about' %>
-
-<%= link_to "View #{@profile.username}'s Profile", profile_path(@profile.id) %>
-
-<%= link_to "Create Shout!", new_profile_shout_path %>
-
-<%= link_to "Logout", logout_path, method: :post %> 
+<footer>
+  <span id="about"><%= link_to "About Us", '/site/about' %></span>
+  <span id="profile"><%= link_to "View #{@profile.username}'s Profile", profile_path(@profile.id) %></span>
+  <span id="create"><%= link_to "Create Shout!", new_profile_shout_path %></span>
+  <span id="logout"><%= link_to "Logout", logout_path, method: :post %></span> 
+</footer>

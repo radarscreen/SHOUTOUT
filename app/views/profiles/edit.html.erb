@@ -1,17 +1,22 @@
 <h1>Edit Your Profile</h1>
-<div class="alert">
-
+<div class="box">
+  <%= form_for @profile do |p| %>
+  <div class="label"><%= label_tag(:username)%></div>
+  <div class="text"><%= p.text_field :username %></div>
+  <div class="label"><%= label_tag(:email)%></div>
+  <div class="text"><%= p.text_field :email %></div>
+  <div class ="label"><%= p.label :password %></div> 
+  <div class="text"><%= p.text_field :password %></div>
+  <div class ="label"><%= p.label :phone_number %></div>
+  <div class="text"><%= p.text_field :phone_number %></div>
+  <div>
+    <span id ="note-label"><%= p.label(:notification, "Notify me about new shouts!") %></span>
+    <span id ="checkbox"><%= p.check_box(:notification) %></span>
+  </div>
 </div>
-<%= form_for @profile do |p| %>
-Username:
-<%= p.text_field :username %>
-Email: 
-<%= p.text_field :email %>
-Password: 
-<%= p.text_field :password %>
-<%= p.submit "Update Your Profile" %>
+<div class="submit"><%= p.submit "Update Your Profile" %></div>
 <% end  %>
-
-<%= button_to "Delete", profile_path(@profile), :method => :delete  %>
-
-<%= link_to "Back to Shouts!", profile_shouts_path(@profile) %>
+<footer>
+  <span id="delete"><%= button_to "Delete", profile_path(@profile), :method => :delete  %></span>
+  <span id="back"><%= link_to "Back to Shouts!", profile_shouts_path(@profile) %></span>
+</footer>
