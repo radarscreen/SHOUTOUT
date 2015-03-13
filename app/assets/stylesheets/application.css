@@ -4,6 +4,7 @@
 */
 
 body {
+  margin: 0px, auto;
   position: relative;
   margin-top: 0px;
   width: auto;
@@ -21,7 +22,6 @@ body {
   background-color: #12618A;
   padding: 30px;
   width: auto;
-  position: relative;
   border-color: #F27D24;
   border-bottom-style: solid;
   border-width: 3px;

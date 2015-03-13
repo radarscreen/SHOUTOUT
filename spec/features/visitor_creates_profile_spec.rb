@@ -7,7 +7,7 @@ feature "Visitor creates a profile" do
     fill_in "profile_password", with: @password = "123456"
     fill_in "profile_email", with: @email = "testing@testerbot.com"
     click_button "Signup"
-    expect(page).to have_content("Here's tester123's shouts!")
+    expect(page).to have_content("Upcoming Shouts!")
   end
 
   scenario "and forgets a password" do

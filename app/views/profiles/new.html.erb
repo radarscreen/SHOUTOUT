@@ -1,55 +1,51 @@
-<h1>Create New Profile </h1>
-
-<% if @profile.errors.any? %>
-  <% @profile.errors.full_messages.each do |error| %>
-    <p class = "text-danger"><%= error %></p>
+<div class="alert">
+<% flash.each do |key, value| %>
+  <% if key == "error" %>
+    <%= content_tag :div, value, class: "text-center_alert_alert-warning" %>
+  <% elsif key == "alert" %>
+    <%= content_tag :div, value, class: "text-center_alert_alert-danger" %>
   <% end %>
 <% end %>
-<div class="box">
-<%= form_for(@profile, url: profiles_path, method: "post") do |f|%>
-<div class ="row label">
-<div class = "col-xs-3 col-xs-offset-3">
-  <%= f.label :username  %></div>
+</div>
+<h1>Create New Profile </h1>
+
+<div class = "container-fluid">
+
+  <div class="box">
+    
+        <%= form_for(@profile, url: profiles_path, method: "post") do |f|%>
+      <div class ="label"><%= f.label :username  %></div>
+      <div class="text"><%= f.text_field :username, placeholder: "Enter a Username", autofocus: true %></div>
+      <div class ="label"><%= f.label :email %></div>
+      <div class="text"><%= f.text_field :email, placeholder: "Enter Your Email" %></div>
+      <div class ="label"><%= f.label :password %></div>
+      <div class="text"><%= f.password_field :password, placeholder: "Make a Password"  %></div>
+      <div class ="label"><%= f.label :phone_number %></div>
+      </div>
+      <div class="row text">
+        <div class="col-xs-6 col-xs-offset-3"><%= f.text_field :phone_number %></div>
+      </div>
+      <span id ="note-label"><%= f.label(:notification, "Notify me about new shouts!") %></span>
+       <span id ="checkbox"><%= f.check_box(:notification) %></span>
+      </div>
+    </div>
   </div>
-  <div class="row text">
-    <div class="col-xs-6 col-xs-offset-3">
-  <%= f.text_field :username, placeholder: "Name...", autofocus: true %></div>
+
   </div>
-  <div class ="row label">
-    <div class = "col-xs-3 col-xs-offset-3">
-  <%= f.label :email %></div>
-  </div>
-  <div class="row text">
-    <div class="col-xs-6 col-xs-offset-3">
-  <%= f.text_field :email, placeholder: "Email..." %></div>
-  </div>
-  <div class ="row label">
-    <div class = "col-xs-3 col-xs-offset-3">
-  <%= f.label :password %></div>
-  </div>
-  <div class="row text">
-    <div class="col-xs-6 col-xs-offset-3">
-  <%= f.password_field :password, placeholder: "Password..."  %></div>
-  </div>
-  <div class ="row label">
-    <div class = "col-xs-3 col-xs-offset-3">
-  <%= f.label :phone_number %></div>
-  </div>
-  <div class="row text">
-    <div class="col-xs-6 col-xs-offset-3">
-  <%= f.text_field :phone_number %>
-  <div class ="row label">
-    <div class = "col-xs-3 col-xs-offset-3">
-  <%= f.label(:notification, "Notify me about new shouts!") %></div>
-  </div><div class="col-xs-3">
-  <%= f.check_box(:notification) %></div>
-  </div>
+
   <div class="row submit">
-    <div class="col-xs-2 col-xs-offset-4">
-  <%= f.submit("Signup", class: "btn btn-primary") %>
+    <div class="col-xs-2 col-xs-offset-4"><%= f.submit("Signup", class: "btn btn-primary") %></div>
   </div>
+ 
+  <div class="row foot">
+    <div class="col-xs-12">
+      <div class="row foot-links">
+        <div class="col-xs-6 col-xs-offset-3">
+          <div id="signup"><%= link_to "Have an account already? Log in here", site_login_path %></div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
-
-  <%= link_to "Have an account already? Log in here", site_login_path %>
-<% end %>
