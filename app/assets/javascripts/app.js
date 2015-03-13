@@ -9,7 +9,7 @@ $(document).ready(function() {
   function shoutLoop () {
 
     $.ajax({
-      url: "http://localhost:3000/profiles/47/shouts",
+      url: "http://shoutout01.herokuapp.com/profiles/47/shouts",
       dataType : "json",
       success: function (shouts){
         shouts.forEach(function(value) {
