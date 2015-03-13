@@ -17,7 +17,10 @@ $(document).ready(function() {
           if (value.id > currentShoutID) {
             currentShoutID = value.id;
             console.log("currentShoutID = " + currentShoutID);
-            $(".shouts").prepend("<li><a href=http://shoutout01.herokuapp.com/profiles/"+profileId+"/shouts/"+value.id+">"+value.title+"</a></li>");
+
+            if (profileId != value.profile_id) {
+              $(".shouts").prepend("<li><a href=http://shoutout01.herokuapp.com/profiles/"+profileId+"/shouts/"+value.id+">"+value.title+"</a></li>");
+            }
           }
         });
       },
