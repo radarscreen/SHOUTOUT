@@ -1,8 +1,12 @@
 class ShoutsController < ApplicationController
   #before_action :find_profile, only: [:index, :edit, :show, :destroy] 
   def index
-    @shouts = Shout.all
-    @shouts = Shout.order('created_at DESC')
+    @category_id = params[:category_id]
+    if @category_id
+      @shouts = Shout.where(category_id: @category_id)
+    else
+      @shouts = Shout.order('created_at DESC')
+    end
     @profile = Profile.find params[:profile_id]
     @categories = Category.all
     respond_to do |format|
@@ -40,6 +44,7 @@ class ShoutsController < ApplicationController
 
   def update
     @shout = Shout.find_by_id(params[:id])
+    @profile = Profile.find_by_id(params[:profile_id])
     if @shout.update_attributes shout_params
       notify
       redirect_to profile_shout_path

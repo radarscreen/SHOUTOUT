@@ -1,7 +1,8 @@
 <h1>Upcoming Shouts!</h1>
 
-<%= form_tag profile_shouts_path do %>
-<%= select_tag "Filter by Category", options_from_collection_for_select(@categories, :id, :category) %>
+<%= form_tag profile_shouts_path, method: :get do %>
+<%= select_tag :category_id, options_from_collection_for_select(@categories, :id, :category, @category_id) %>
+<%= submit_tag "Filter by Category" %>
 <% end %>
 
 
