@@ -21,4 +21,8 @@
 
 <%= link_to "Create Shout!", new_profile_shout_path %>
 
-<%= link_to "Logout", logout_path, method: :post %> 
+<%= link_to "Logout", logout_path, method: :post %>
+
+<script>
+  var profileId = <%= @profile.id %>;
+</script> 

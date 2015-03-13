@@ -7,16 +7,16 @@ $(document).ready(function() {
   }
 
   function shoutLoop () {
-
+    console.log(profileId);
     $.ajax({
-      url: "http://shoutout01.herokuapp.com/profiles/47/shouts",
+      url: "http://shoutout01.herokuapp.com/profiles/"+profileId+"/shouts",
       dataType : "json",
       success: function (shouts){
         shouts.forEach(function(value) {
           if (value.id > currentShoutID) {
             currentShoutID = value.id;
             console.log("currentShoutID = " + currentShoutID);
-            $(".shouts").prepend("<h4>" + value.title + "</h4>");
+            $(".shouts").prepend("<li>" + value.title + "</li>");
 
           }
 
