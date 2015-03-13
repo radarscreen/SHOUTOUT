@@ -19,7 +19,7 @@ $(document).ready(function() {
             console.log("currentShoutID = " + currentShoutID);
             $(".shouts").prepend("<li>" + value.title + "</li>");
 
-            $(".shouts").prepend("<li><a href=" + value.title, "/profiles/"+profileId+"/shouts/"+value.id+"</li>");
+            $(".shouts").prepend("<li><a href=http://shoutout01.herokuapp.com/profiles/"+profileId+"/shouts/"+value.id+">"+value.title+"</a></li>");
           }
 
 
