@@ -11,16 +11,22 @@ class ProfilesController < ApplicationController
   end
 
   def edit
+    @profile = Profile.find_by_id(params[:id])
   end
 
   def create
     @profile = Profile.create profile_params
     puts profile_params
-    if @profile.save
-      redirect_to profile_shouts_path @profile, notice: "Successfully created"
+    found_profile_by_username = Profile.where(username: params[:username]).first
+    found_profile_by_email = Profile.where(email: params[:email]).first
+    if found_profile_by_username or found_profile_by_email
+      flash[:error] = "That username or email already exists. Try something different."
+      redirect_to new_profile_path
+    elsif @profile.save
+      redirect_to profile_shouts_path @profile
     else
       redirect_to new_profile_path
-      flash[:error] = "Your information is incomplete"
+      flash[:error] = "Your information is incomplete or you've chosen a username/email that already exists"
     end
     # @profile = Profile.new  profile_params
     # if @profile.save
@@ -32,6 +38,13 @@ class ProfilesController < ApplicationController
   ##also have an inkling that the user isn't being saved properly, which would cause the 'else' to manifest.
 
   def update
+    @profile = Profile.find_by_id(params[:id])
+    if @profile.update_attributes profile_params
+      redirect_to profile_shouts_path @profile, notice: "Successfully edited"
+    else
+      flash[:error] = "Your information is incomplete"
+      redirect_to edit_profile_path
+    end
   end
 
   def destroy

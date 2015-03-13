@@ -1,13 +1,11 @@
 <h1>Your Profile</h1>
 
 <%= @profile.username %>
-<%= @profile.email %>
-<%= @profile.shouts.each do |s| %>
+<% @profile.shouts.each do |s| %>
 <ul>
-  <li><%= link_to "#{s.title}" %></li>
+  <li><%= link_to "#{s.title}", "/profiles/#{@profile.id}/shouts/#{s.id}"%></li>
 </ul>
 <% end %>
-
 
 <%= link_to "Back to Shouts!", profile_shouts_path(@profile) %>
 

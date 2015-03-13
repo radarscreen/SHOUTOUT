@@ -1,16 +1,13 @@
 <h1>Edit Your Profile</h1>
 <div class="alert">
-<% flash.each do |key, value| %>
-  <% if key == "error" %>
-    <%= content_tag :div, value, class: "text-center_alert_alert-warning" %>
-  <% elsif key == "alert" %>
-    <%= content_tag :div, value, class: "text-center_alert_alert-danger" %>
-  <% end %>
-<% end %>
+
 </div>
 <%= form_for @profile do |p| %>
+Username:
 <%= p.text_field :username %>
+Email: 
 <%= p.text_field :email %>
+Password: 
 <%= p.text_field :password %>
 <%= p.submit "Update Your Profile" %>
 <% end  %>
