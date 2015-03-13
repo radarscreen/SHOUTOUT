@@ -9,6 +9,10 @@ class ShoutsController < ApplicationController
     end
     @profile = Profile.find params[:profile_id]
     @categories = Category.all
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json {render :json => @shouts}
+    end
   end
 
   def create

@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+  var currentShoutID = 0;
 
   function initialize () {
     setInterval(function () {shoutLoop();}, 5000); 
@@ -8,19 +9,23 @@ $(document).ready(function() {
   function shoutLoop () {
 
     $.ajax({
-      url: "https://dataclips.heroku.com/ykzjhdqdkuzhwfrlgxmilbijctxk-profiles",
+      url: "http://localhost:3000/profiles/47/shouts",
       dataType : "json",
-      success: function (data){
-        data.Search.forEach(function(value) {
-          console.log(value);
-          $("body").append("<h4>" + value.username + "</h4>");
+      success: function (shouts){
+        shouts.forEach(function(value) {
+          if (value.id > currentShoutID) {
+            currentShoutID = value.id;
+            console.log("currentShoutID = " + currentShoutID);
+            $(".shouts").prepend("<h4>" + value.title + "</h4>");
+
+          }
+
         });
+      },
+      error: function(err) {
       }
     });
-
-
   }
-
 
 initialize();
 
