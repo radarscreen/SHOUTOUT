@@ -13,6 +13,14 @@ h1.shout-index {
   height: 150px;
   width: 200px;
 }
+.button {
+  width: 200px;
+  background: rgb(183, 123, 123);
+  height: 31px;
+}
+#view-all {
+  text-align: center;
+}
 #submit-shout-index {
   text-align: center;
   font-size: 25pt;
@@ -72,4 +80,7 @@ h3 {
 iframe {
   margin: auto;
   padding-left: 200px;
+}
+footer {
+  
 }
