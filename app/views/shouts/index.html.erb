@@ -1,11 +1,20 @@
 <h1>Upcoming Shouts!</h1>
-
-<%= form_tag profile_shouts_path, method: :get do %>
+<div>
+<span>
+<%= form_tag profile_shouts_path, method: :get, style: "display: inline;" do %>
 <%= select_tag :category_id, options_from_collection_for_select(@categories, :id, :category, @category_id) %>
 <%= submit_tag "Filter by Category" %>
 <% end %>
 
+<%= form_tag profile_shouts_path, method: :get, style: "display: inline;" do %>
+	<%= submit_tag "View All Shouts" %>
+<% end %>
+</span>
+<span>
 
+</span>
+</div>
+<br>
 
 <ul class="shouts">
 <% @shouts.each do |shout| %>
