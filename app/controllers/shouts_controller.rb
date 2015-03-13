@@ -7,7 +7,7 @@ class ShoutsController < ApplicationController
     @categories = Category.all
     respond_to do |format|
       format.html # index.html.erb
-      format.json {render :json => @shouts_results}
+      format.json {render :json => @shouts}
     end
   end
 

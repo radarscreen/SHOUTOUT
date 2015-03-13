@@ -1,23 +1,28 @@
 $(document).ready(function() {
 
+  var currentShoutID = 0;
+
   function initialize () {
     setInterval(function () {shoutLoop();}, 5000); 
   }
 
   function shoutLoop () {
-    console.log("test2");
+
     $.ajax({
       url: "http://localhost:3000/profiles/47/shouts",
       dataType : "json",
-      success: function (data){
-        data.Search.forEach(function(value) {
-          console.log("test3");
-          console.log(value.username);
-          $("body").append("<h4>" + value.username + "</h4>");
+      success: function (shouts){
+        shouts.forEach(function(value) {
+          if (value.id > currentShoutID) {
+            currentShoutID = value.id;
+            console.log("currentShoutID = " + currentShoutID);
+            $(".shouts").prepend("<h4>" + value.title + "</h4>");
+
+          }
+
         });
       },
       error: function(err) {
-        console.log("test4");
       }
     });
   }
