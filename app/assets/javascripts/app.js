@@ -7,7 +7,7 @@ $(document).ready(function() {
   function shoutLoop () {
     console.log("test2");
     $.ajax({
-      url: "http://localhost:3000/profiles/47",
+      url: "http://localhost:3000/profiles/47/shouts",
       dataType : "json",
       success: function (data){
         data.Search.forEach(function(value) {

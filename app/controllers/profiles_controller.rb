@@ -5,7 +5,6 @@ class ProfilesController < ApplicationController
      @profile = Profile.new
   end
 
-
   def show
     @profile = Profile.find_by_id(params[:id])
      #render :profile_shouts_path

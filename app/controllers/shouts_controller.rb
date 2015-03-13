@@ -5,6 +5,10 @@ class ShoutsController < ApplicationController
     @shouts = Shout.order('created_at DESC')
     @profile = Profile.find params[:profile_id]
     @categories = Category.all
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json {render :json => @shouts_results}
+    end
   end
 
   def create
