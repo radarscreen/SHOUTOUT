@@ -4,6 +4,11 @@
 <span id="submit-shout-index"><%= submit_tag "Filter by Category" %></span>
 <% end %>
 
+<%= form_tag profile_shouts_path, method: :get, style: "display: inline;" do %>
+  <%= submit_tag "View All Shouts" %>
+<% end %>
+
+
 <% @shouts.each do |shout| %>
 <div class="shouts-index">
   <p><%= link_to "#{shout.title}", "/profiles/#{@profile.id}/shouts/#{shout.id}"%></p>
