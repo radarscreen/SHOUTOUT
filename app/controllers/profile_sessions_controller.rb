@@ -28,6 +28,9 @@ class ProfileSessionsController < ApplicationController
         flash[:notice] = "Your username or password is invalid"
         redirect_to root_path
       end
+    else
+      flash[:notice] = "Please enter a username and password"
+      redirect_to root_path
     end
   end
 
