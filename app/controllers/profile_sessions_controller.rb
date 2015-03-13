@@ -21,15 +21,15 @@ class ProfileSessionsController < ApplicationController
           if authorized_profile
             redirect_to profile_shouts_path(authorized_profile)
           else
-            flash[:notice] = "Your username or password is invalid"
-            redirect_to root_path 
+            flash[:error] = "Your username or password is invalid"
+            redirect_to root_path
           end
       else
-        flash[:notice] = "Your username or password is invalid"
+        flash[:error] = "Your username or password is invalid"
         redirect_to root_path
       end
     else
-      flash[:notice] = "Please enter a username and password"
+      flash[:error] = "Please enter a username and password"
       redirect_to root_path
     end
   end

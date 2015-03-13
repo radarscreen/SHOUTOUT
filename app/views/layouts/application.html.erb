@@ -14,12 +14,11 @@
   </div>
 </header>
 
-
 <% flash.each do |key, value| %>
   <% if key == "error" %>
-    <%= content_tag :div, value, class: "text-center_alert_alert-warning" %>
+    <%= content_tag :div, value, class: "text-center alert alert-warning" %>
   <% elsif key == "alert" %>
-    <%= content_tag :div, value, class: "text-center_alert_alert-danger" %>
+    <%= content_tag :div, value, class: "text-center alert alert-danger" %>
   <% end %>
 <% end %>
 
