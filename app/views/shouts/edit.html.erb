@@ -9,8 +9,9 @@
 <%= s.text_field :time %>
 <%= s.text_field :location %>
 <%= s.text_area :description %>
-</div>
 <span id= "submit-shout-edit"><%= s.submit "Update Your Shout" %></span>
+</div>
+
 <% end  %>
 
 <span id="delete-shout"><%= button_to "X", profile_shout_path(@profile, @shout), :method => :delete %></span>
