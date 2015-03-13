@@ -1,3 +1,44 @@
-// Place all the styles related to the profiles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.text-danger {
+  font-color: black;
+  background-color: #FFE5A4;
+  border-style: solid;
+  border-color: #F27D24;
+  text-align: center;
+  padding: 20px;
+  width: auto;
+}
+.box {
+  background-color: #12618A;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  margin-bottom: 80px;
+  width: 800px;
+  height: 700px;
+  border-color: #F27D24;
+  border-style: solid;
+  border-width: 3px;
+}
+.label {
+  text-align: center;
+  position: relative;
+  font-size: 15pt;
+  font-family: Helvetica;
+}
+.text {
+  text-align: center;
+  position: relative;
+  margin-right: 5px;
+}
+.input-large {
+  position: center;
+  padding: 5px;
+  width: 200px;
+  height: 50px;
+}
+.submit {
+  margin-top: 60px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+ 
+}

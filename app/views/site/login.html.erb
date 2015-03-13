@@ -13,34 +13,37 @@
 
 
   <%= form_tag login_path  do %>
-  <div class ="row-label">
+  <div class ="row label">
     <div class = "col-xs-3 col-xs-offset-3"><%= label_tag(:username)%></div>
   </div>
-  <div class="row-text">
+  <div class="row text">
     <div class="col-xs-6 col-xs-offset-3"><%= text_field_tag(:username, params[:profile], placeholder: "  Enter Your Username", class: 'input-large', autofocus: true,)%></div>
   </div>
-  <div class ="row-label">
+  <div class ="row label">
     <div class="col-xs-3 col-xs-offset-3"><%= label_tag(:password)%></div>
   </div>
-  <div class="row-text">
+  <div class="row text">
     <div class="col-xs-6 col-xs-offset-3"><%= password_field_tag(:password, nil,  class: 'input-large', )%></div>
   </div>
 
-  <div class="row-login">
-    <div class="col-xs-2 col-xs-offset-4"><%= submit_tag("Log in", class: "btn btn-primary") %></div>
+  <div class="row login">
+    <div class="col-xs-2 col-xs-offset-4"><%= submit_tag("Log In", class: "btn btn-primary") %></div>
   </div>
 
   <% end %>
 
 </div>
-
-  <div class="row-footer">
-    <div class="col-md-3 col-md-offset-4">
-      <span id ="signup"><%= link_to "Sign Up", new_profile_path %></span>
+<div class="row foot">
+  <div class="col-xs-12 col-sm-12 col-md-12 ">
+    <div class="row foot-links">
+      <div class="col-xs-3 col-xs-offset-4">
+        <span id ="signup"><%= link_to "Sign Up", new_profile_path %></span>
+      </div>
+      <div class="col-xs-3">
+        <span id="about"><%= link_to "About Us", '/site/about' %></span>
+      </div>
     </div>
-    <div class="col-md-3">
-      <span id="about"><%= link_to "About Us", '/site/about' %></span>
-    </div>
+  </div>
 </div>
 
 

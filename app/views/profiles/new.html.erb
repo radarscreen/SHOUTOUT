@@ -5,28 +5,51 @@
     <p class = "text-danger"><%= error %></p>
   <% end %>
 <% end %>
-
+<div class="box">
 <%= form_for(@profile, url: profiles_path, method: "post") do |f|%>
-
-
-  <%= f.label :username  %>
-  <%= f.text_field :username, placeholder: "Name...", autofocus: true %>
-
-  <%= f.label :email %>
-  <%= f.text_field :email, placeholder: "Email..." %>
-
-
-  <%= f.label :password %>
-  <%= f.password_field :password, placeholder: "Password..."  %>
-
-  <%= f.label :phone_number %>
+<div class ="row label">
+<div class = "col-xs-3 col-xs-offset-3">
+  <%= f.label :username  %></div>
+  </div>
+  <div class="row text">
+    <div class="col-xs-6 col-xs-offset-3">
+  <%= f.text_field :username, placeholder: "Name...", autofocus: true %></div>
+  </div>
+  <div class ="row label">
+    <div class = "col-xs-3 col-xs-offset-3">
+  <%= f.label :email %></div>
+  </div>
+  <div class="row text">
+    <div class="col-xs-6 col-xs-offset-3">
+  <%= f.text_field :email, placeholder: "Email..." %></div>
+  </div>
+  <div class ="row label">
+    <div class = "col-xs-3 col-xs-offset-3">
+  <%= f.label :password %></div>
+  </div>
+  <div class="row text">
+    <div class="col-xs-6 col-xs-offset-3">
+  <%= f.password_field :password, placeholder: "Password..."  %></div>
+  </div>
+  <div class ="row label">
+    <div class = "col-xs-3 col-xs-offset-3">
+  <%= f.label :phone_number %></div>
+  </div>
+  <div class="row text">
+    <div class="col-xs-6 col-xs-offset-3">
   <%= f.text_field :phone_number %>
-
-  
-  <%= f.label(:notification, "Notify me about new shouts!") %>
-  <%= f.check_box(:notification) %>
-
+  <div class ="row label">
+    <div class = "col-xs-3 col-xs-offset-3">
+  <%= f.label(:notification, "Notify me about new shouts!") %></div>
+  </div><div class="col-xs-3">
+  <%= f.check_box(:notification) %></div>
+  </div>
+  <div class="row submit">
+    <div class="col-xs-2 col-xs-offset-4">
   <%= f.submit("Signup", class: "btn btn-primary") %>
-</p>
+  </div>
+  </div>
+</div>
+
   <%= link_to "Have an account already? Log in here", site_login_path %>
 <% end %>
