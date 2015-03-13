@@ -40,6 +40,7 @@ class ShoutsController < ApplicationController
 
   def update
     @shout = Shout.find_by_id(params[:id])
+    @profile = Profile.find_by_id(params[:profile_id])
     if @shout.update_attributes shout_params
       notify
       redirect_to profile_shout_path
