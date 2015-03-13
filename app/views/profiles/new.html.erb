@@ -1,12 +1,3 @@
-<div class="alert">
-<% flash.each do |key, value| %>
-  <% if key == "error" %>
-    <%= content_tag :div, value, class: "text-center_alert_alert-warning" %>
-  <% elsif key == "alert" %>
-    <%= content_tag :div, value, class: "text-center_alert_alert-danger" %>
-  <% end %>
-<% end %>
-</div>
 <h1>Create New Profile </h1>
 <div class="box">
   <%= form_for(@profile, url: profiles_path, method: "post") do |f|%>
