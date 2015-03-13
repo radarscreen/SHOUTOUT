@@ -17,8 +17,12 @@ class ProfilesController < ApplicationController
   def create
     @profile = Profile.create profile_params
     puts profile_params
-    redirect_to profile_shouts_path @profile
-
+    if @profile.save
+      redirect_to profile_shouts_path @profile, notice: "Successfully created"
+    else
+      redirect_to new_profile_path
+      flash[:error] = "Your information is incomplete"
+    end
     # @profile = Profile.new  profile_params
     # if @profile.save
     #    redirect_to '/profiles/:profile_id/shouts' #:notice => "SHOUT IT OUT!"
