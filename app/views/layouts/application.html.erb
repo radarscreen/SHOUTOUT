@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>ShoutOut!</title>
+  <title>ShoutOut!</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-<header>
-  <div class = "header">
-    <h1 class="shoutout">ShoutOut!</h1>
-  </div>
-</header>
-
+<div class = "header">
+  <h1 class="shoutout">ShoutOut!</h1>
+</div>
 
 <% flash.each do |key, value| %>
   <% if key == "error" %>
-    <%= content_tag :div, value, class: "text-center_alert_alert-warning" %>
+    <%= content_tag :div, value, class: "text-center alert alert-warning" %>
   <% elsif key == "alert" %>
-    <%= content_tag :div, value, class: "text-center_alert_alert-danger" %>
+    <%= content_tag :div, value, class: "text-center alert alert-danger" %>
   <% end %>
 <% end %>
-
 
 <%= yield %>
 
 </body>
+<footer>
+  <div class="footer"></div>
+</footer>
 </html>
