@@ -1,12 +1,4 @@
-<div class="alert">
-<% flash.each do |key, value| %>
-  <% if key == "error" %>
-    <%= content_tag :div, value, class: "text-center_alert_alert-warning" %>
-  <% elsif key == "alert" %>
-    <%= content_tag :div, value, class: "text-center_alert_alert-danger" %>
-  <% end %>
-<% end %>
-</div>
+
 <h1>Create New Profile </h1>
 
 <div class = "container-fluid">
@@ -27,15 +19,16 @@
       </div>
       <span id ="note-label"><%= f.label(:notification, "Notify me about new shouts!") %></span>
        <span id ="checkbox"><%= f.check_box(:notification) %></span>
+      
+      <div class="row submit">
+        <div class="col-xs-2 col-xs-offset-4"><%= f.submit("Signup", class: "btn btn-primary") %></div>
       </div>
     </div>
   </div>
 
   </div>
 
-  <div class="row submit">
-    <div class="col-xs-2 col-xs-offset-4"><%= f.submit("Signup", class: "btn btn-primary") %></div>
-  </div>
+  
  
   <div class="row foot">
     <div class="col-xs-12">
@@ -47,5 +40,6 @@
         <% end %>
       </div>
     </div>
-  </div>
-</div>
+    </div>
+  <!-- </div>
+</div> -->
