@@ -1,45 +1,22 @@
-
 <h1>Create New Profile </h1>
-
-<div class = "container-fluid">
-
-  <div class="box">
-    
-        <%= form_for(@profile, url: profiles_path, method: "post") do |f|%>
-      <div class ="label"><%= f.label :username  %></div>
-      <div class="text"><%= f.text_field :username, placeholder: "Enter a Username", autofocus: true %></div>
-      <div class ="label"><%= f.label :email %></div>
-      <div class="text"><%= f.text_field :email, placeholder: "Enter Your Email" %></div>
-      <div class ="label"><%= f.label :password %></div>
-      <div class="text"><%= f.password_field :password, placeholder: "Make a Password"  %></div>
-      <div class ="label"><%= f.label :phone_number %></div>
-      </div>
-      <div class="row text">
-        <div class="col-xs-6 col-xs-offset-3"><%= f.text_field :phone_number %></div>
-      </div>
-      <span id ="note-label"><%= f.label(:notification, "Notify me about new shouts!") %></span>
-       <span id ="checkbox"><%= f.check_box(:notification) %></span>
-      
-      <div class="row submit">
-        <div class="col-xs-2 col-xs-offset-4"><%= f.submit("Signup", class: "btn btn-primary") %></div>
-      </div>
-    </div>
+<div class="box">
+  <%= form_for(@profile, url: profiles_path, method: "post") do |f|%>
+  <div class ="label"><%= f.label :username  %></div>
+  <div class="text"><%= f.text_field :username, placeholder: "Enter a Username", autofocus: true %>
+  <div class ="label"><%= f.label :email %></div>
+  <div class="text"><%= f.text_field :email, placeholder: "Enter Your Email" %></div>
+  <div class ="label"><%= f.label :password %></div>
+  <div class="text"><%= f.password_field :password, placeholder: "Make a Password"  %></div>
+  <div class ="label"><%= f.label :phone_number %></div>
+  <div class="text"><%= f.text_field :phone_number %></div>
+  <div>
+    <span id ="note-label"><%= f.label(:notification, "Notify me about new shouts!") %></span>
+    <span id ="checkbox"><%= f.check_box(:notification) %></span>
   </div>
+</div>
+<div class="submit"><%= f.submit("Signup", class: "btn btn-primary") %></div>
+<% end %>
+<footer>
+  <div id="signup"><%= link_to "Have an account already? Log in here", site_login_path %></div>
+</footer>
 
-  </div>
-
-  
- 
-  <div class="row foot">
-    <div class="col-xs-12">
-      <div class="row foot-links">
-        <div class="col-xs-6 col-xs-offset-3">
-          <div id="signup"><%= link_to "Have an account already? Log in here", site_login_path %></div>
-          </div>
-        </div>
-        <% end %>
-      </div>
-    </div>
-    </div>
-  <!-- </div>
-</div> -->

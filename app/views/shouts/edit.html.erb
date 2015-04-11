@@ -1,5 +1,6 @@
 <h1>Edit Your Shout</h1>
 
+<div class="box-shout-edit">
 <%= form_for [@profile, @shout] do |s| %>
 
 <%= s.collection_select(:category_id, @categories, :id, :category, {:prompt => false}) %> 
@@ -8,10 +9,12 @@
 <%= s.text_field :time %>
 <%= s.text_field :location %>
 <%= s.text_area :description %>
-<%= s.submit "Update Your Shout" %>
+<span id= "submit-shout-edit"><%= s.submit "Update Your Shout" %></span>
+</div>
+
 <% end  %>
 
-<%= button_to "X", profile_shout_path(@profile, @shout), :method => :delete %>
+<span id="delete-shout"><%= button_to "X", profile_shout_path(@profile, @shout), :method => :delete %></span>
 
 <%= link_to "Back to Shouts!", profile_shouts_path(@profile) %>
 

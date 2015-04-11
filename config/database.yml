@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: shoutout_production
-  username: shoutout
-  password: <%= ENV['SHOUTOUT_DATABASE_PASSWORD'] %>
+  database: <%= ENV['DATABASE_URL'] %>
+  # username: shoutout
+  # password: <%= ENV['SHOUTOUT_DATABASE_PASSWORD'] %>

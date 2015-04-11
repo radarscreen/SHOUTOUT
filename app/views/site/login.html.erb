@@ -1,27 +1,14 @@
-
-<div class = "alerts">
-<% flash.each do |key, value| %>
-  <% if key == "notice" %>
-    <%= content_tag :div, value, class: "text-center_alert_alert-warning" %>
-  <% elsif key == "alert" %>
-    <%= content_tag :div, value, class: "text-center_alert_alert-danger" %>
-  <% end %>
-<% end %>
-</div>
-
-<div class= "box">
+<div class= "box-login">
   <%= form_tag login_path  do %>
-  <div class="label"><%= label_tag(:username)%></div>
-  <div class="text"><%= text_field_tag(:username, params[:profile], placeholder: "  Enter Your Username", class: 'input-large', autofocus: true,)%></div>
-  <div class="label"><%= label_tag(:password)%></div>
-  <div class="text"><%= password_field_tag(:password, nil,  class: 'input-large', )%></div>
+  <div class="label-login"><%= label_tag(:username)%></div>
+  <div class="text-login"><%= text_field_tag(:username, params[:profile], placeholder: "  Enter Your Username", class: 'input-large', autofocus: true,)%></div>
+  <div class="label-login"><%= label_tag(:password)%></div>
+  <div class="text-login"><%= password_field_tag(:password, nil,  class: 'input-large-login', )%></div>
 </div>
-  <div class="login"><%= submit_tag("Log In", class: "btn btn-primary") %></div>
+  <div class="login-login"><%= submit_tag("Log In", class: "btn btn-primary-login") %></div>
   <% end %>
 <footer>
-<div class="foot">
-  <span id ="signup"><%= link_to "Sign Up", new_profile_path %></span>
-  <span id="about"><%= link_to "About Us", '/site/about' %></span>
-</div>
+  <span id ="signup-login"><%= link_to "Sign Up", new_profile_path %></span>
+  <span id="about-login"><%= link_to "About Us", '/site/about' %></span>
 </footer>
 

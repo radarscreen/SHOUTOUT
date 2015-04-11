@@ -1,24 +1,4 @@
-div.text-center_alert_alert-warning {
-  font-color: black;
-  background-color: #FFE5A4;
-  border-style: solid;
-  border-color: #F27D24;
-  text-align: center;
-  padding: 20px;
-  width: auto;
-}
-div.text-center_alert_alert-danger {
-  font-color: black;
-  background-color: #FFE5A4;
-  border-style: solid;
-  border-color: #F27D24;
-  text-align: center;
-  padding: 20px;
-  width: auto;
-}
-
-
-.box {
+.box-login {
   background-color: #12618A;
   margin-left: auto;
   margin-right: auto;
@@ -26,99 +6,125 @@ div.text-center_alert_alert-danger {
   margin-bottom: 80px;
   width: 400px;
   height: 350px;
+  border-radius: 5px;
   border-color: #F27D24;
   border-style: solid;
   border-width: 3px;
 }
-
-.label {
+.label-login {
+  margin-top: 40px;
   text-align: center;
   position: relative;
   font-size: 25pt;
   font-family: Helvetica;
+  font-color: #FFFFFC;
 }
-
-.text {
+.text-login {
+  margin-top: 10px;
   text-align: center;
   padding-left: 10px;
   position: relative;
   margin-right: 15px;
-  
- } 
-.login {
+} 
+.login-login {
+  position: relative;
   margin-top: 60px;
-  margin-bottom: 20px;
-  margin-left: 10px;
-  
+  margin-bottom: 40px;
+  margin-left: auto; 
+  margin-right: auto;
+  text-align: center;
+  font-size: 25pt;
+  font-family: Helvetica;
+  padding: 20px;
+  height: 150px;
+  width: 200px;
 }
-.input-large {
+.btn-primary-login {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  font-size: 25pt;
+  font-family: Helvetica;
+  padding: 20px;
+  height: 150px;
+  width: 200px;
+}
+.input-large-login {
   position: center;
   padding: 5px;
   width: 200px;
   height: 50px;
-  
- 
 }
 footer {
   width: auto;
   background-color: #12618A;
-  position: relative;
-  padding-bottom: auto; 
+  // position: relative; 
+  margin: auto;
+  padding-bottom: auto;
   border-top-style: solid;
   border-color: #F27D24;
   border-width: 3px;
-
 }
-.foot {
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-}
-#signup {
+#signup-login {
   position: relative;
   background-color: #FFFFF8;
   border-color: #F27D24;
   border-style: solid;
   border-width: 3px;
-  width: 200px;
-  height: 75px;
-  margin-top: 20px;
-  padding: 20px;
-  padding-left: 50px;
-  padding-bottom: 40px;
   text-aligin: center;
   font-size: 20pt;
   color: #F27D24;
-  float: left;
-
 }
-#about {
+#about-login {
+  position: relative;
   background-color: #FFFFF8;
   border-color: #F27D24;
   border-style: solid;
   border-width: 3px;
-  width: 200px;
-  height: 75px;
-  margin-top: 20px;
-  padding: 20px;
-  padding-left: 40px;
-  padding-bottom: 40px;
   text-aligin: center;
   font-size: 20pt;
-  color: #F27D24;
-  float: left;
+  font-color: #F27D24;
 }
-h1 {
+h1.about {
   width: auto;
   font-family: Helvetica;
   text-align: center;
-  font-size: 60pt;
+  font-size: 50pt;
   text-shadow: 2px 3px 0px #F27D24;
 }
-.sun_coder_img {
-  position: center;
+h3.about {
+  width: auto;
+  font-family: Helvetica;
+  text-align: center;
+  font-size: 35pt;
+  text-shadow: 2px 3px 0px #F27D24;
+}
+#sun_coder_img img{
+  margin: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   border-style: solid;
   border-color: #F27D24;
-  border-radius: 2px;
-
+}
+h5.about {
+  width: auto;
+  font-family: Helvetica;
+  text-align: center;
+  font-size: 20pt;
+  text-shadow: 2px 3px 0px #F27D24;
+}
+.foot-about {
+  padding-bottom: auto;
+  border-top: solid;
+  border-color: #F27D24;
+  border-width: 3px;
+  text-align: center;
+  border-bottom: 3px solid #F27D24;
+  font-size: 1.5em
+  
+}
+#home-about a{
+  background: white;
+  border: 3px solid #F27D24;
 }

@@ -1,19 +1,22 @@
 <h1><%= @shout.title %></h1>
-<h3>Time: <%= @shout.time %></h3>
-<h3>Location: <%= @shout.location %></h3>
+<div class="box-shout-show">
+  <h3>Time: <%= @shout.time %></h3>
+  <h3>Location: <%= @shout.location %></h3>
+
+  <iframe
+    width="400"
+    height="350"
+    frameborder="0" style="border:0"
+    src="https://www.google.com/maps/embed/v1/place?key=<%= ENV["places_key"] %>
+      &q=<%= @shout.location %>,<%= @shout.city %>+<%= @shout.state %>">
+    }
+  </iframe>
+  <h3>Description:
+  <p><%= @shout.description %></p></h3>
+</div>
 <%= link_to "Edit #{@shout.title}", edit_profile_shout_path %>
-<iframe
-  width="400"
-  height="350"
-  frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/place?key=<%= ENV["places_key"] %>
-    &q=<%= @shout.location %>,<%= @shout.city %>+<%= @shout.state %>">
-  }
-</iframe>
+<footer>
+  <%= link_to "Back to Shouts Page", profile_shouts_path %>
+</footer>
 
-<p><%= @shout.description %></p>
-
-<p>
-<%= link_to "Back to Shouts Page", :back %>
-</p>
 

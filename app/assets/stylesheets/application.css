@@ -14,7 +14,24 @@ body {
   background-color: #FFFFF8;
   padding: 0px;
 }
-
+.text-center_alert_alert-warning {
+  font-color: black;
+  background-color: #FFE5A4;
+  border-style: solid;
+  border-color: #F27D24;
+  text-align: center;
+  padding: 20px;
+  width: auto;
+}
+text-center_alert_alert-danger {
+  font-color: black;
+  background-color: #FFE5A4;
+  border-style: solid;
+  border-color: #F27D24;
+  text-align: center;
+  padding: 20px;
+  width: auto;
+}
 .header {
   position: relative;
   margin-top: -20px;
