@@ -9,31 +9,22 @@
 </head>
 <body>
 
-<<<<<<< HEAD
+
 <header>
   <div class = "header">
     <h1 class="shoutout">ShoutOut!</h1>
   </div>
 </header>
-=======
-<div class = "header">
-  <h1 class="shoutout">ShoutOut!</h1>
-</div>
->>>>>>> 7ea1dd6c65a9de9bf052038bac6056d041a94baf
 
 <% flash.each do |key, value| %>
   <% if key == "error" %>
     <%= content_tag :div, value, class: "text-center alert alert-warning" %>
   <% elsif key == "alert" %>
-<<<<<<< HEAD
-    <%= content_tag :div, value, class: "text-center_alert_alert-warning" %>
-=======
     <%= content_tag :div, value, class: "text-center alert alert-danger" %>
->>>>>>> 7ea1dd6c65a9de9bf052038bac6056d041a94baf
   <% end %>
 <% end %>
 
 <%= yield %>
 
-
+</body>
 </html>
