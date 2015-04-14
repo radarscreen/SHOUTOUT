@@ -14,9 +14,9 @@
   <h3>Description:
   <p><%= @shout.description %></p></h3>
 </div>
-<%= link_to "Edit #{@shout.title}", edit_profile_shout_path %>
 <footer>
-  <%= link_to "Back to Shouts Page", profile_shouts_path %>
+  <%= link_to "Back to Shouts Page", :back %>
+  <%= link_to "Edit Your Shout", edit_profile_shout_path %>
 </footer>
 
 

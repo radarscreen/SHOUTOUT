@@ -16,12 +16,8 @@
   <%= f.label :title  %>
   <%= f.text_field :title, placeholder: "Title...", autofocus: true %>
 
-  <%= f.label :time %>
-
-
-  <%= f.text_field :time, placeholder: "When..."  %>
-
-
+  <%= f.label "Make a time within the Next 24 hours" %>
+  <%= f.time_select :time %>
 
   <%= f.label :location %>
   <%= f.text_field :location, placeholder: "Address, City, State..." %>

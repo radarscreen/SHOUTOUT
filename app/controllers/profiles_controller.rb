@@ -1,4 +1,4 @@
-class ProfilesController < ApplicationController
+ class ProfilesController < ApplicationController
   # before_action :find_profile, only: 
 
   def new
@@ -69,4 +69,5 @@ class ProfilesController < ApplicationController
   def find_profile
     @profile = Profile.find params[:id]
   end
+
 end
