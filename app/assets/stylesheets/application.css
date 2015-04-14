@@ -17,13 +17,13 @@ body {
 .header {
   margin-top: -40px;
   margin: 0px, auto;
-  background-color: #FFFF99;
+  background-color: #297B7F;
   padding: 30px;
   width: auto;
   position: relative;
-  border-color: #333329;
+  border-color: #F2481E;
   border-bottom-style: solid;
-  border-width: 3px;
+  border-width: 5px;
   text-align: center;
 }
 h1.shoutout {
