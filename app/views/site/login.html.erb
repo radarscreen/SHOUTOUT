@@ -1,14 +1,31 @@
-<div class= "box-login">
-  <%= form_tag login_path  do %>
-  <div class="label-login"><%= label_tag(:username)%></div>
-  <div class="text-login"><%= text_field_tag(:username, params[:profile], placeholder: "  Enter Your Username", class: 'input-large', autofocus: true,)%></div>
-  <div class="label-login"><%= label_tag(:password)%></div>
-  <div class="text-login"><%= password_field_tag(:password, nil,  class: 'input-large-login', )%></div>
-</div>
-  <div class="login-login"><%= submit_tag("Log In", class: "btn btn-primary-login") %></div>
+<div class = "alerts">
+<% flash.each do |key, value| %>
+  <% if key == "notice" %>
+    <%= content_tag :div, value, class: "text-center_alert_alert-warning" %>
+  <% elsif key == "alert" %>
+    <%= content_tag :div, value, class: "text-center_alert_alert-danger" %>
   <% end %>
-<footer>
-  <span id ="signup-login"><%= link_to "Sign Up", new_profile_path %></span>
-  <span id="about-login"><%= link_to "About Us", '/site/about' %></span>
-</footer>
+<% end %>
+</div>
 
+<div class="login_box">
+  <%= form_tag login_path  do %>
+  <p>
+    <%= text_field_tag(:username, params[:profile], placeholder: " Enter Your Username", autofocus: true,)%>
+  </p>
+  <p>
+    <%= password_field_tag(:password, nil, placeholder: " Password")%>
+  </p>
+  <p>
+    <%= submit_tag('Log in', class: 'login_button') %>
+  <% end %>
+  </p>
+
+  <p>
+    <%= link_to "Sign Up", new_profile_path %>
+  </p>
+  <p>
+    <%= link_to "About Us", '/site/about' %>
+  </p>
+
+</div>
