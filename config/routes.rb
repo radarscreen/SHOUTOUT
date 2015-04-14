@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
   root :to => 'site#login'
+  
   resources :profile_sessions
+
+
   resources :profiles do
     resources :shouts
   end
@@ -16,7 +19,7 @@ post 'logout' => 'profile_sessions#logout', :as => :logout
 
   # for twilio
   # post 'twilio/voice', to: 'twilio#voice'
-  post 'notifications/notify', to: 'notifications#notify'
+  # post 'notifications/notify', to: 'notifications#notify'
 
 # Prefix Verb   URI Pattern                                     Controller#Action
 #                 root GET    /                                               site#login
